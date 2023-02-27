@@ -1,0 +1,97 @@
+@import '_imports';
+
+.friends {
+  @extend %page-setup;
+
+  .friend-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .friend {
+      @extend %content-container;
+      position: relative;
+
+      .contact {
+        display: flex;
+        gap: 5px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        svg {
+          padding: 10px;
+          background-color: #eee;
+          font-size: 13px;
+          border-radius: 50%;
+        }
+      }
+
+      .user {
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin: 10px 0;
+        }
+
+        p {
+          color: $grey;
+          font-size: 13px;
+          margin: 5px 0 0;
+        }
+      }
+
+      .info {
+        @include isolate-line(15);
+        position: relative;
+
+        span:not(.vip) {
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+
+          &:not(:last-of-type) {
+            margin-bottom: 10px;
+          }
+
+          svg {
+            margin-right: 7px;
+          }
+        }
+
+        .vip {
+          font-size: 40px;
+          font-weight: bold;
+          color: $orange;
+          opacity: 0.2;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      .react {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+
+        span {
+          color: $grey;
+        }
+
+        .show-remove {
+          .show {
+            margin-right: 3px;
+          }
+
+          .remove {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+mixin sidebar(active)
+  .sidebar.bg-white.fixed-top
+    h3.title.text-capitalize.text-center.pb-0.pb-md-4.fw-bold.position-relative elzero
+    ul.list-unstyled
+      each i in [{icon: "fa-regular fa-chart-bar", name: "dashboard", link: "dashboard.html"}, {icon: "fa-solid fa-gear", name: "settings", link: "settings.html"}, {icon: "fa-regular fa-user", name: "profile", link: "profile.html"}, {icon: "fa-solid fa-diagram-project", name: "projects", link: "projects.html"}, {icon: "fa-solid fa-graduation-cap", name: "courses", link: "courses.html"}, {icon: "fa-regular fa-circle-user", name: "friends", link: "friends.html"}, {icon: "fa-regular fa-file", name: "files", link: "files.html"}, {icon: "fa-regular fa-credit-card", name: "plans", link: "plans.html"}]
+        li.rounded-2(class=i.name === active ? "active" : ""): a.d-block.p-2(href=i.link) #[i.fa-fw.me-0.me-md-2.text-capitalize(class=i.icon)] #[span.text-capitalize.d-none.d-md-inline-block= i.name]

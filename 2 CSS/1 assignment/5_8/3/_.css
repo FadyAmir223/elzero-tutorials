@@ -1,0 +1,30 @@
+div {
+  width: 400px;
+  height: 400px;
+  background-image: url(../_.png);
+  margin: 15px;
+  background-color: gray;
+}
+
+.assign-3-shape-1 {
+  background-repeat: no-repeat;
+  display: inline-block;
+  justify-content: center;
+}
+
+.assign-3-shape-2 {
+  background-repeat: repeat-y;
+  background-position: right;
+  display: inline-block;
+}
+
+.assign-3-shape-3 {
+  background-repeat: repeat-x;
+  background-position: bottom;
+  display: inline-block;
+}
+
+.assign-3-shape-4 {
+  background-repeat: repeat;
+  display: inline-block;
+}

@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+.page {
+    width: 85vw;
+    margin: auto;
+    padding: 15px;
+    background-color: black;
+}
+
+select:required:invalid {
+    color: gray;
+}
+  option[value=""][disabled] {
+    display: none;
+}
+  option {
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+header > * {
+    background-color: white;
+    border-radius: 5px;
+}
+header input,
+header select,
+header button {
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+header input:focus-visible,
+header select:focus-visible,
+header button:focus-visible {
+    outline: none;
+}
+.price {
+    display: flex;
+    align-items: center;
+}
+header .price i {
+    padding: 10px;
+    margin-right: 5px;
+    background-color: #F7F7F7;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #0EAAA6;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+section .title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+section .text {
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

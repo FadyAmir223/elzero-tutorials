@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+.title {
+    background-color: #316877;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+}
+.products {
+    display: flex;
+}
+.products > div {
+    border: 5px solid #DDDDDD;
+    margin: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.img {
+    width: 233px;
+    height: 233px;
+    background-size: cover;
+    margin: 2px;
+}
+.suit-1 .img {
+    background-image: url(assets/suit-1.png);
+}
+.suit-2 .img {
+    background-image: url(assets/suit-2.png);
+    position: relative;
+}
+.glass .img {
+    background-image: url(assets/glass.png);
+}
+.watch .img {
+    background-image: url(assets/watch.png);
+}
+.suit-2 .img::before {
+    content: "Sale!";
+    width: 50px;
+    height: 50px;
+    background-color: #FA4C02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -17px;
+    left: -23px;
+}
+.text,
+.price {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.text {
+    opacity: 0.9;
+}
+.price {
+    background-color: rgb(58, 62, 65);
+    width: fit-content;
+    padding: 5px;
+    z-index: 1;
+}
+.price::before {
+    content: "";
+    width: 95%;
+    height: 2px;
+    background-color: #DDDDDD;
+    position: absolute;
+    bottom: 6%;
+    z-index: -1;
+}
+.price:not(.suit-2 .price) {
+    color: #89B1D2;
+}
+.before {
+    opacity: 0.6;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+.after {
+    color: #FA4C02;
+}

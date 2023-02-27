@@ -1,0 +1,29 @@
+input {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 30px;
+  width: 80%;
+  height: 40px;
+  background-color: #f4f4f4;
+  position: relative;
+  border: none;
+  caret-color: red;
+  outline: 0;
+
+  /* border-width: 0 0 2px;
+  border-bottom: solid 3px transparent;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, #f44336 50%, #009688 50%);
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #fff inset; */
+
+  border-width: 0px 0px 2px 0px;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, #f44336 50%, #009688 50%);
+  border-image-slice: 1;
+}
+
+input:focus {
+  outline: none;
+}

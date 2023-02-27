@@ -1,0 +1,210 @@
+@import '_imports';
+
+.settings {
+  @extend %page-setup;
+  
+  .control {
+    @extend %content-container;
+    @include switch;
+
+    .txt {
+      p {
+        font-size: 13px;
+        margin-top: 5px;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: $radius;
+      padding: 10px;
+      min-height: 150px;
+      resize: none;
+      border: 1px solid #ccc;
+
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .general-info {
+    @extend %content-container;
+
+    .info {
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+
+      label {
+        color: $grey;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid $grey;
+        border-radius: $radius;
+        font-size: 14px;
+
+        &[type="email"] {
+          background-color: #f0f4f8;
+          color: #bbb;
+          cursor: no-drop;
+        }
+
+        &:not(&[type="email"])::placeholder {
+          text-transform: capitalize;
+        }
+      }
+
+      .email {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        a {
+          color: $blue;
+          cursor: pointer;
+          display: inline-block;
+          margin-left: 10px;
+        }
+      }
+  
+    }
+  }
+
+  .security-info {
+    @extend %content-container;
+    @include switch;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include barrier-line(15);
+
+      p {
+        font-size: 13px;
+        margin: 5px 0 0;
+      }
+
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .social-info {
+    @extend %content-container;
+
+    .platform {
+      color: $grey;
+      display: flex;
+
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+
+      &:focus-within svg {
+        color: white;
+      }
+
+      svg {
+        border: 1px solid $grey;
+        border-right: none;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: $radius 0 0 $radius;
+        transition: $t-time;
+      }
+
+      input {
+        border: 1px solid $grey;
+        border-radius: 0 $radius $radius 0;
+        height: 40px;
+        padding-left: 10px;
+        flex: 1;
+        font-size: 13px;
+
+        &::placeholder {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .widgets {
+    @extend %content-container;
+
+    .checkbox-container {
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+
+      label {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .backup {
+    @extend %content-container;
+
+    .list-radio {
+      @include barrier-line(20);
+
+      .radio-container {
+        &:not(:last-of-type) {
+          margin-bottom: 15px;
+        }
+
+        label {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .radio-icon-container {
+      display: grid;
+      gap: 15px;
+
+      @media #{min-mobile} {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .radio-icon {
+        display: flex;
+        input[type="radio"] {
+          appearance: none;
+
+          &:checked + label {
+            border: 2px solid $blue;
+            color: $blue;
+          }
+        }
+        
+        label {
+          text-transform: capitalize;
+          width: 100%;
+          padding: 20px 0;
+          border-radius: 10px;
+          border: 2px solid $grey;
+          text-align: center;
+          cursor: pointer;
+
+          .icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

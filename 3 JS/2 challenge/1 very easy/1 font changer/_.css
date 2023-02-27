@@ -1,0 +1,15 @@
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Metal Mania', cursive; */
+/* font-family: 'Caesar Dressing', cursive; */
+
+select {
+  width: 100%;
+  outline: none;
+  padding: 10px;
+}
+h1 {
+  text-align: center;
+  background-color: #DCDCDC;
+  padding: 10px;
+  text-transform: capitalize;
+}

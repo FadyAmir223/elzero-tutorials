@@ -1,0 +1,14 @@
+div {
+    border: 10px solid red;
+    padding: 15px;
+    margin: 20px;
+}
+
+p {
+    background-color: #DDDDDD;
+    color: black;
+    text-align: center;
+    border: inherit;
+    padding: inherit;
+    margin: inherit;
+}

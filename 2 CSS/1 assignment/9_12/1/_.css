@@ -1,0 +1,28 @@
+div {
+    display: inline-block;
+    background-color: #D4D4D4;
+    padding: 10px;
+    margin: 0px;
+}
+
+._1 {
+    border: 5px red solid;
+}
+
+._2 {
+    border-width: 5px;
+    border-color: blue green;
+    border-style: solid;
+}
+
+._3 {
+    border-width: 5px;
+    border-color: red green blue yellow;
+    border-style: dashed;
+}
+
+.__ {
+    padding: 0px;
+    margin: 0px;
+    border: 5px black solid;
+}

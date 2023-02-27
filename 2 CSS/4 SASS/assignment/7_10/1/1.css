@@ -1,0 +1,11 @@
+.school {
+  padding: 10px;
+  direction: "ltr";
+  margin-left: 20px;
+}
+.school .school-box {
+  padding: 10px;
+}
+.school:hover .school-box {
+  background-color: #eee;
+}/*# sourceMappingURL=1.css.map */

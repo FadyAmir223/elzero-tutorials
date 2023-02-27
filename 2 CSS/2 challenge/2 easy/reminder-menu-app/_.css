@@ -1,0 +1,108 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+input[type="search"]::-webkit-input-placeholder { 
+font-family: FontAwesome;
+}
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    font-size: large;
+}
+.page {
+    width: 40vw;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 20px;
+    background-color: black;
+}
+
+input[type="search"],
+section > * {
+    border-radius: 8px;
+}
+
+header .text {
+    font-size: 20px;
+    color: #007EFF;
+    text-align: end;
+}
+header input {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #181A1B;
+}
+
+section {
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(2, auto);
+    gap: 10px;
+}
+section > * {
+    padding: 10px;
+    background-color: #181A1B;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+section .text {
+    width: 100%;
+    margin-top: 15px;
+    color: 888888;
+}
+section .zero,
+footer .text {
+    font-size: 28px;
+    color: black;
+    font-weight: bold;
+}
+
+i {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+i[class*='calendar'] {
+    background-color: #007DFE;
+}
+i[class*='clock'] {
+    background-color: #FE9500;
+}
+i[class*='box'] {
+    background-color: #5A6267;
+}
+i[class*='flag'] {
+    background-color: #FF4B2A;
+}
+.list:first-child i[class*='list'] {
+    background-color: #1BB557;
+}
+.list:last-child i[class*='list'] {
+    background-color: #FFC700;
+}
+
+footer .lists {
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 1px;
+}
+footer .lists .list {
+    display: flex;
+    justify-content: space-between;
+    background-color: #181A1B;
+    padding: 10px;    
+}
+footer .lists > :first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+footer .lists > :last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

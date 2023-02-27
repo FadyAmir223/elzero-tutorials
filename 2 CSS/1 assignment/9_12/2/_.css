@@ -1,0 +1,30 @@
+div {
+  background-color: #EEEEEE;
+  width: 400px;
+  padding-left: 15px;
+  line-height: 50px;
+  height: 50px;
+  margin: 10px;
+  position: relative;
+}
+
+div::before {
+  content: "";
+  width: 5px;
+  height: 80%;
+  position: absolute;
+  left: 7px;
+  top: 10%;
+}
+
+div._1::before {
+  background-color: #e91e63;
+}
+
+div._3::before {
+  background-color: #009688;
+}
+
+._2 {
+  visibility: hidden;
+}

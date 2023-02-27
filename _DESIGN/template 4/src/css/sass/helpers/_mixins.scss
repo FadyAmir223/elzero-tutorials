@@ -1,0 +1,86 @@
+@mixin barrier-line($size) {
+  &:not(:last-of-type) {
+    padding-bottom: #{$size}px;
+    margin-bottom: #{$size}px;
+    border-bottom: 1px solid $grey;
+  }
+}
+
+@mixin isolate-line($size) {
+  padding: #{$size}px 0;
+  margin: #{$size}px 0;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
+}
+
+// switch
+@mixin switch($width: 78px, $height: 32px, $color: $blue) {
+  .switch-container {
+    $padding: 4px;
+    display: flex;
+    align-items: center;
+    $circle: $height - $padding * 2;
+
+    .switch-box {
+      appearance: none;
+      transition: $t-time;
+
+      &:checked + .switch {
+        background-color: $color;
+    
+        &::before {
+          content: "\f00c";
+          color: $color;
+          left: $width - $circle - $padding;
+        }
+      }
+    }
+    
+    .switch {
+      width: $width;
+      height: $height;
+      background-color: $grey;
+      border-radius: 16px;
+      position: relative;
+      cursor: pointer;
+      
+      &::before {
+        content: "\f00d";
+        background-color: black;
+        color: #ccc;
+        font-family: "Font Awesome 6 Pro";
+        border-radius: 50%;
+        padding: 3px;
+        width: $circle;
+        height: $circle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: $padding;
+        left: $padding;
+        transition: $t-time;
+      }
+    }
+  }
+}
+
+// bar
+@mixin bar($bar-width, $bar-height, $bar-color: $blue) {
+  .bar {
+    position: relative;
+    width: $bar-width;
+    height: $bar-height;
+    background-color: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    
+    span {
+      position: absolute;
+      left: 0;
+      height: 100%;
+      background-color: $bar-color;
+      border-radius: 6px;
+    }
+  }
+}

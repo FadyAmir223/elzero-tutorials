@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    background-color: #EEEEEE;
+    font-size: 35px;
+    color: #03A9F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+}
+
+div,
+div::after,
+div::before {
+    width: 300px;
+    height: 200px;
+}
+
+div::after,
+div::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+div::after {
+    background-color: #03A9F4;
+    transform: rotate(-10deg);
+}
+
+div::before {
+    background-color: #E91E63;
+    transform: rotate(10deg);
+}
+  

@@ -1,0 +1,11 @@
+div {
+  text-shadow: 1px 1px 0px #ea473f,
+               3px 3px 0px #2196F3,
+               5px 5px 0px #B864C6;
+  text-transform: capitalize;
+  background-color: black;
+  color: black;
+  font-size: 150px;
+  padding: 20px;
+  font-family: Arial, Geneva, Helvetica, sans-serif;
+}

@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+.page {
+    background-color: #E0EBF3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 30px;
+    width: fit-content;
+    margin: auto;
+}
+.package {
+    background-color: black;
+    width: 350px;
+    height: 580px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+.price {
+    color: black;
+    font-size: 40px;
+    padding-top: 60px;
+    padding-left: 115px;
+    padding-right: 115px;
+    margin-bottom: 25px;
+}
+._2 {
+    margin-top: 30px;
+}
+._3 {
+    margin-top: 60px;
+}
+.type {
+    width: 160px;
+    height: 50px;
+    padding: 20px;
+    border-top-right-radius: 99px;
+    border-bottom-right-radius: 99px;
+    position: absolute;
+    left: -9px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.type::before {
+    content: "";
+    position: absolute;
+    left: 2.8px;
+    top: 0;
+    transform: translateY(-50%) rotate(45deg);
+}
+._1 .type {
+    background-color: #13C8A6;
+}
+._2 .type {
+    background-color: #EFCB53;
+}
+._3 .type {
+    background-color: #555FAE;
+}
+._1 .type::before {
+    border: 6.5px solid #13C8A6;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+._2 .type::before {
+    border: 6px solid #EFCB53;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+._3 .type::before {
+    border: 6px solid #555FAE;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 100px;
+    line-height: 2;
+    color: black;
+    font-size: 18px;
+}
+ul li:first-of-type {
+    line-height: 3;
+}
+button {
+    border: none;
+    font-size: 19px;
+    columns: white;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 15px;
+}
+._1 button {
+    background-color: #13C8A6;
+}
+._2 button {
+    background-color: #EFCB53;
+}
+._3 button {
+    background-color: #555FAE;
+}

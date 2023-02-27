@@ -1,0 +1,15 @@
+// Write Mixin Code Here
+@mixin flex-center($param: 400px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $param;
+}
+
+// Using
+.box-one {
+  @include flex-center(400px);
+}
+.box-two {
+  @include flex-center;
+}

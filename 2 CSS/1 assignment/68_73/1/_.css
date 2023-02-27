@@ -1,0 +1,37 @@
+h1 {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h1::after,
+h1::before {
+    padding: 10px;
+    width: 150px;
+    background-color: #FF5722;
+}
+
+h1::after,
+h1::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+
+h1::after {
+    transform: skew(10deg, 10deg);
+}
+
+h1::before {
+    transform: skew(-10deg, -10deg);
+}

@@ -1,0 +1,5 @@
+{
+  "movies": ["inception", "interstellar", "memento", "tenet"],
+  "series": ["dark", "black mirror"],
+  "anime": ["death note", "another", "steins gate"]
+}

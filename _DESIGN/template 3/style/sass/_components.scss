@@ -1,0 +1,87 @@
+@use './vars' as *;
+@use './animation';
+
+
+.container {
+  padding: 0 $padding-global;
+  margin: 0 auto;
+}
+
+.main-title {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0 auto 80px;
+  padding: 10px 20px;
+  border: 2px solid $gray;
+  position: relative;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    background-color: $main-color;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    z-index: -1;  
+  }
+
+  &::after {
+    left: -30px;
+  }
+
+  &::before {
+    right: -30px;
+  }
+
+  &:hover {
+    &::after {
+      animation: dot-spread-left 0.5s linear forwards;
+      z-index: -1;
+    }
+  
+    &::before {
+      animation: dot-spread-right 0.5s linear forwards;
+      z-index: -1;
+    }
+  }
+}
+
+.spikes {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+                      linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 30px 30px;
+  }
+}
+
+.dot {
+  position: absolute;
+  width: 204px;
+  height: 186px;
+  z-index: -1;
+
+  &.top {
+    right: 0;
+    top: 200px;
+  }
+
+  &.bottom {
+    left: 0;
+    bottom: 200px;
+  }
+}

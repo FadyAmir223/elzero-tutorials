@@ -1,0 +1,114 @@
+@media (max-width: 767px) {
+    header nav {
+        height: 97px;
+    }
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        display: none;
+        background-color: rgb(0 0 0 / 50%);
+    }
+    header nav a {
+        padding: 15px;
+        width: 100%;
+    }
+    header nav .toggle-menu {
+        font-size: 20px;
+    }
+    header nav .toggle-menu:hover + ul {
+        display: flex;
+    }
+    .landing .info-text {
+        width: 100%;
+    }
+    .landing .info-text .content {
+        max-width: 100%;
+    }
+    .landing .arrows {
+        display: none;
+    }
+    .services .service {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services .service i {
+        margin: 0 0 30px;
+    }
+    .portfolio .images {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+    .about img {
+        bottom: -80px;
+        margin-top: -80px;    
+    }
+    .skills .user {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills .user img {
+        margin: 0 0 20px;
+    }
+    .contact .content {
+        flex-direction: column;
+    }
+    .contact .info {
+        /* text-align: center; */
+        order: -1;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    header nav .toggle-menu {
+        display: none;
+    }
+    .services .service-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-gap: 60px 40px;
+    }
+}
+@media (max-width: 991px) {
+    .design img {
+        display: none;
+    }
+    .design .info-text {
+        width: 100%;
+        left: 0;
+    }
+    .stat .container .box {
+        flex-basis: 50%;
+    }
+    .skills .container {
+        grid-template: repeat(2, 1fr) / auto;
+    }
+    .subscribe .container {
+        flex-direction: column;
+    }
+    .subscribe form {
+        margin: 0 0 30px;
+        text-align: center;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .portfolio .images {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}

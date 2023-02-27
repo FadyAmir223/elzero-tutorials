@@ -1,0 +1,68 @@
+.sidebar {
+  max-width: $sidebar-lg;
+  box-shadow: 0 0 10px #ddd;
+  height: 100vh;
+  padding: 20px;
+
+  @media (max-width: 767px) {
+    width: $sidebar-sm;
+    padding: 10px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+    font-size: 18px;
+
+    @media (max-width: 767px) {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: 768px) {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        bottom: 0;
+        left: 50%;
+      }
+      
+      &::before {
+        transform: translateX(-50%);
+        width: 80px;
+        height: 2px;
+      }
+      
+      &::after {
+        $size: 20px;
+        transform: translate(-50%, calc($size / 2));
+        border-radius: 50%;
+        width: $size;
+        height: $size;
+        border: 3px solid $grey;
+      }
+    }
+  }
+
+  ul {
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 5px;
+      }
+
+      &.active,
+      &:hover {
+        background-color: #f6f6f6;
+        transition: $t-time;
+        cursor: pointer;
+      }
+
+      a {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

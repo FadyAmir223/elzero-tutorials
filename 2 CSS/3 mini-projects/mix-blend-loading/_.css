@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+}
+.load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+span {
+    font-size: 80px;
+    text-transform: uppercase;
+    line-height: 1;
+    z-index: 1;
+    color: white;
+    mix-blend-mode: difference;
+}
+.load::before {
+    --width: 100px;
+    content: '';
+    width: var(--width);
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    animation: move 3s linear infinite;
+}
+@keyframes move {
+    0%, 100% { left: 0; }
+    50% { left: calc(100% - var(--width)); }
+}

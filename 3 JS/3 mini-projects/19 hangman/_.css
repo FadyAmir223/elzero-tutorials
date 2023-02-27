@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  max-width: 700px;
+  margin: 20px auto 0;
+  position: relative;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+.cat span {
+  font-weight: bold;
+  color: #e91e63;
+}
+.game {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 3px solid black;
+}
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  user-select: none;
+}
+.keyboard span {
+  margin: 3px;
+  width: 40px;
+  height: 40px;
+  background-color: #008677;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.keyboard span.done {
+  pointer-events: none;
+  background-color: #333;
+  opacity: 0.3;
+}
+.draw {
+  --color: #555;
+  --width: 4px;
+  --left: 30%;
+  position: relative;
+  width: 292px;
+}
+.draw .line {
+  width: var(--width);
+  left: var(--left);
+  height: 184px;
+  margin-left: -2px;
+}
+.draw .base {
+  width: 50px;
+  left: var(--left);
+  height: var(--width);
+  margin-left: -25px;
+  top: 184px;
+  position: absolute;
+}
+.draw .hang {
+  width: 75px;
+  left: var(--left);
+  height: var(--width);
+  top: 0;
+}
+.draw .hang::before {
+  width: var(--width);
+  height: 30px;
+  top: 0;
+  right: 0;
+}
+.draw .head-1 {
+  border: var(--width) dotted var(--color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  left: calc(var(--left) + (75px / 2) + (22px / 2));
+  top: 26px;
+}
+.draw .head-2 {
+  --head-rad: 30px;
+  border: var(--width) solid var(--color);
+  border-radius: 50%;
+  width: var(--head-rad);
+  height: var(--head-rad);
+  position: absolute;
+  top: calc(30px + 21px);
+  left: calc(var(--left) + 74px);
+  transform: translate(-50%, -50%);
+}
+.draw .body {
+  --height: 65px;
+  width: var(--width);
+  height: var(--height);
+  left: calc(var(--left) + 75px - 3px);
+  top: calc(30px + 50px - 5px);
+}
+.draw .hand::before,
+.draw .hand::after {
+  width: var(--width);
+  height: 30px;
+  left: 160px;
+  top: 83px;
+}
+.draw .hand::before {
+  transform: rotate(-40deg);
+  margin-left: -9px;
+}
+.draw .hand::after {
+  transform: rotate(40deg);
+  margin-left: 9px;
+}
+.draw .leg::before,
+.draw .leg::after {
+  width: var(--width);
+  height: 30px;
+  left: 161px;
+  top: 135px;
+}
+.draw .leg::before {
+  transform: rotate(40deg);
+  margin-left: -9px;
+}
+.draw .leg::after {
+  transform: rotate(-40deg);
+  margin-left: 9px;
+}
+.draw > * {
+  position: absolute;
+  display: none;
+}
+.draw :not(.head-1, .head-2) {
+  background-color: var(--color);
+}
+.draw .hang::before,
+.draw .hand::before,
+.draw .hand::after,
+.draw .leg::before,
+.draw .leg::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color);
+}
+.guess {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  user-select: none;
+  margin-top: 10px;
+}
+.guess span:not(.space) {
+  border-bottom: 3px solid black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+.guess span.space {
+  width: 20px;
+  height: 4px;
+  background-color: #008677;
+  position: relative;
+  top: 18px; 
+}
+.final {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+.final span {
+  font-weight: bold;
+  font-size: 22px;
+  color: #e91e63;
+}
+.final button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: #e91e63;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.final.hide {
+  display: none;
+}

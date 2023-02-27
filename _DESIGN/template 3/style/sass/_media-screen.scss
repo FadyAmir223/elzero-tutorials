@@ -1,0 +1,176 @@
+$mobile-min: 768px;
+$mobile-max: 767px;
+$tab-min: 992px;
+$tab-max: 991px;
+$lab-max: 1200px;
+
+@media (min-width: $mobile-min) {
+  .container {
+    width: 750px;
+  }
+  header .container {
+    position: relative;
+  }
+}
+
+@media (max-width: $mobile-max) {
+  header {
+    position: relative;
+
+    .container {
+      flex-direction: column;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .main-links > li > a {
+      height: 40px;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .mega-menu {
+      .links {
+        height: calc(50px * var(--n-links));
+      }
+
+      .mega-menu {
+        padding: 0;
+
+        .links li:nth-of-type(5) {
+          border-bottom: 1px solid #e9e6e6;
+        }    
+      }
+    }
+  }
+
+  .landing {
+    .title {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .features .feature {
+    .image::before {
+      border-width: 0px 0px 230px 750px;
+    }
+
+    &:hover .image::before {
+      border-width: 230px 750px 230px 0;
+    }
+  }
+
+  .work {
+    .content {
+      gap: 50px;
+    }
+  
+    .item {
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        margin: 0 0 30px;
+      }
+    }
+  }
+
+  .events form {
+    flex-direction: column;
+    padding: 20px;
+
+    &,
+    input {
+      border-radius: 0;
+    }
+  }
+
+  footer {
+    text-align: center;
+
+    .icons {
+      justify-content: center;
+    }
+
+    .contact {
+      margin: 0 auto;
+
+      p {
+        margin-bottom: 30px;
+        flex-direction: column;
+      }
+
+      i {
+        margin: 0 0 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: $tab-min) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (max-width: $tab-max) {
+  header .mega-menu img {
+    display: none;
+  }
+  .landing {
+    img {
+      display: none;
+    }
+
+    .container {
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .title {
+      margin-bottom: 10px;
+    }
+  }
+
+  .skills {
+    img {
+      display: none;
+    }
+
+    .list {
+      flex-basis: 100%;
+    }
+  }
+
+  .work .container {
+    flex-direction: column;
+  }
+
+  .events .container img {
+    display: none;
+  }
+
+  .videos .content {
+    flex-direction: column;
+  }
+
+  .discount {
+    flex-direction: column;
+
+    .form {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@media (min-width: $lab-max) {
+  .container {
+    width: 1170px;
+  }
+}

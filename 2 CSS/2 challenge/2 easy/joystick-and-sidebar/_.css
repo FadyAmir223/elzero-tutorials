@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.page {
+    background-color: black;
+    height: 98vh;
+    display: grid;
+    grid-template: 50px 1fr / 1fr 25%;
+    column-gap: 25px;
+    padding: 25px;
+}
+
+header {
+    grid-column: 1 / -1;
+    color: black;
+}
+
+section > img {
+    width: 100%;
+    margin-bottom: 25px;
+}
+section .options {
+    background-color: #EEE;
+    color: black;
+    padding: 10px;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+section .options > * {
+    display: flex;
+    align-items: center;
+}
+section .options .left i {
+    padding: 7px;
+    padding-left: 11px;
+    padding-right: 12px;
+    padding-top: 11px;
+    padding-bottom: 9px;
+    border-radius: 50%;
+    color: white;
+}
+section .options .left i[class*='grid'] {
+    background-color: #AAA;
+    margin-right: 10px;
+}
+section .options .left i[class*='bars'] {
+    background-color: black;
+    margin-right: 25px;
+}
+section .options .left .text {
+    font-size: 14px;
+}
+section .options .right .show {
+    margin-right: 15px;
+}
+section .options .right label + select {
+    margin-left: 3px;
+}
+section .options .right select {
+    border: none;
+    padding: 5px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+}
+.item .img {
+    position: relative;
+}
+.item .img img {
+    width: 350px;
+    height: auto;
+}
+.item .img .offer {
+    border-radius: 50%;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+    background-color: #ed4c21;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+.item .info .rating i {
+    color: yellow;
+    font-size: 14px;
+}
+.item .info .title {
+    color: black;
+    font-size: 17px;
+    line-height: 3;
+}
+.item .info .num {
+    color: #00000080;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+.item .info .price {
+    color: #ed4c21;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+.item .info .price span {
+    color: #00000095;
+    font-size: 13px;
+    text-decoration: line-through;
+    margin-right: 7px;
+}
+.item .info .text {
+    font-size: 14px;
+    color: #00000095;
+    margin-bottom: 17px;
+}
+.item .info .icons {
+    display: flex;
+}
+.item .info .icons > * {
+    border: 0.5px solid #AAA;
+    padding: 12px;
+    margin: 0;
+}
+
+aside {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 30px;
+    color: #00000090;
+    line-height: 1.9;
+}
+aside > * {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border: 0.5px solid #AAA;
+}
+aside .title {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+aside .title::before {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 2.4px;
+    background-color: #ed4c21;
+    left: 0;
+    bottom: 0;
+}
+aside .top .nav {
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 10px;
+    margin: 0;
+}
+aside .bottom li {
+    display: flex;
+}
+aside .bottom .color {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    box-shadow: 1px 1px 3px -1px #EEE;
+}
+aside .bottom ul li:nth-child(1) .color {
+    background-color: gray;
+}
+aside .bottom ul li:nth-child(2) .color {
+    background-color: white;
+}
+aside .bottom ul li:nth-child(3) .color {
+    background-color: black;
+}
+aside .bottom ul li:nth-child(4) .color {
+    background-color: salmon;
+}
+aside .bottom ul li:nth-child(5) .color {
+    background-color: orange;
+}

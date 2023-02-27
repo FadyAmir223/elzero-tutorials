@@ -1,0 +1,26 @@
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+li {
+  padding: 10px;
+  color: black;
+  background-color: #ddd;
+  margin-right: 1px;
+  cursor: pointer;
+  transform: 0.3s;
+  font-size: 20px;
+}
+li:hover,
+.active {
+  background-color: red;
+  color: white;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

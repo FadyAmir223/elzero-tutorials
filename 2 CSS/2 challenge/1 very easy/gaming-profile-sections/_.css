@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+    color: black;
+}
+.profile {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 1000px;
+    margin: auto;
+}
+.profile > *:not(:last-child) {
+    background-color: #EEEEEE;
+    margin-bottom: 20px;
+}
+.user {
+    display: flex;
+    align-content: space-evenly;
+    position: relative;
+}
+.user .right {
+    position: relative;    
+}
+.user .left {
+    width: 35%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.user .left .img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(assets/Raye.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.user .level {
+    font-size: larger;
+    text-align: center;
+    margin-top: -25px;
+}
+.user .left::before {
+    content: "";
+    background: linear-gradient(to right, #009688 80%, #CCCCCC 80%);
+    border-radius: 50px;
+    width: 85%;
+    height: 13px;
+    position: absolute;
+    top: 75%;
+}
+.user .remain {
+    position: absolute;
+    top: 88%;
+    align-self: center;
+    font-size: x-small;
+}
+.remain span {
+    color: #009688;
+}
+.user .left,
+.user .right {
+    padding: 15px;
+    height: 200px;
+}
+.right .name {
+    font-size: 27px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.right .info {
+    line-height: 1.8;
+}
+.right .duration {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.user::before {
+    content: "";
+    height: 100%;
+    width: 2px;
+    background-color: #DDDDDD;
+    position: absolute;
+    left: 18%;
+}
+.title {
+    background-color: #607D8B;
+    columns: white;
+    width: fit-content;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+}
+.points div span:first-child {
+    color: #009688;
+}
+.points div span:last-child {
+    color: #F44336;
+}
+.points div:not(:first-child) {
+    margin: 20px;
+    position: relative;
+    line-height: 30px;
+}
+.points div:not(:first-child, :last-child)::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #DDDDDD;
+    position: absolute;
+    bottom: -50%;
+}
+.thophies .img {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.thophies .img div {
+    --ratio: 10px;
+    width: 65px;
+    height: 65px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 4px;
+}
+.thophies .img div:nth-child(n+1):nth-child(-n+8) {
+    background-image: url(assets/pug.png);
+}
+.thophies .img div:nth-child(n+9):nth-child(-n+16) {
+    background-image: url(assets/st-bernard.png);
+}
+.thophies .img div:nth-child(n+17):nth-child(-n+24) {
+    background-image: url(assets/shiba-inu.png);
+}
+.thophies .img div:nth-child(n+5):nth-child(odd):nth-child(-n+19) {
+    opacity: 0.1;
+}
+.leader .data span:first-child {
+    color: #F44336;
+}
+.leader .data span:last-child {
+    color: #2196F3;
+}
+.leader .data {
+    margin: 20px;
+}
+.power .data {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.power .data > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.power .data > div > div {
+    margin: 10px;
+    line-height: 30px;
+}
+.power .yes {
+    color: #279B71;
+}
+.power .no {
+    color: #FF0C0B;
+}
+.power .data > div {
+    position: relative;
+}
+.power .data > div:not(:first-child)::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #DDDDDD;
+    position: absolute;
+}

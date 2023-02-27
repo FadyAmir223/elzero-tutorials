@@ -1,0 +1,59 @@
+extend _template
+
+block page-name
+  - let name = "settings"
+
+block page-content
+  .row
+    .col-lg-6: .control.mb-3
+      +combo-title("site control", "control the website if there is maintenance")
+      .d-flex.justify-content-between.align-items-center.mb-3
+        .txt
+          span.h6.text-capitalize website control
+          p.color-grey Open/Close Website And Type The Reason
+        +switch
+      textarea(placeholder="close message content")
+
+    .col-lg-6: .general-info.mb-3
+      +combo-title("general info", "general information about your account")
+      .info-list
+        +info("first name", "first name")
+        +info("last name", "last name")
+        +info("email", "o@nn.sa")
+
+    .col-lg-6: .security-info.mb-3
+      +combo-title("security info", "security information about your account")
+      .list
+        +sec-info("devices", "check the login devices list", "tech")
+        +sec-info("password", "last change on 25/10/2021", "btn")
+        +sec-info("two-factor authentication", "enable/disable the feature", "switch")
+
+    .col-lg-6: .social-info.mb-3
+      +combo-title("social info", "social media information")
+      .list
+        +social-info("fa-brands fa-twitter", "twitter")
+        +social-info("fa-brands fa-facebook-f", "facebook")
+        +social-info("fa-brands fa-linkedin", "linkedin")
+        +social-info("fa-brands fa-youtube", "youtube")
+
+    .col-lg-6: .widgets.mb-3
+      +combo-title("widgets control", "show/hide widgets")
+      .list
+        +checkbox("quick draft", "")
+        +checkbox("yearly targets", "")
+        +checkbox("tickets statistics", "")
+        +checkbox("latest news", "")
+        +checkbox("latest tasks")
+        +checkbox("top search items", "")
+
+    .col-lg-6: .backup.mb-3
+      +combo-title("backup manager", "control backup time and location")
+      .list-radio
+        +radiobox("daily", "time", "")
+        +radiobox("weekly", "time")
+        +radiobox("monthly", "time")
+      .list-radio-icon
+        .radio-icon-container
+          +radio-icon("megaman", "server", "fa-solid fa-server")
+          +radio-icon("zero", "server", "fa-solid fa-server")
+          +radio-icon("sigma", "server", "fa-solid fa-server")

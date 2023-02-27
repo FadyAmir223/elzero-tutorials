@@ -1,0 +1,17 @@
+div {
+    background-color: #EEEEEE !important;
+    color: black !important;
+    padding: 20px !important;
+    border: none !important;
+    font-size: 0px !important;
+    margin: auto;
+    margin-top: 10%;
+    width: 60%;
+    text-align: center;
+}
+
+div::before {
+    content: "elzero";
+    font-weight: bold;
+    font-size: 30px !important;
+}

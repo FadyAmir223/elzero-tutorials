@@ -1,0 +1,24 @@
+@mixin arrow($direction) {
+  content: '';
+  position: absolute;
+  border: 20px solid transparent;
+  @if $direction == 'top' or $direction == 'bottom' {
+    left: 50%;
+    transform: translateX(-50%);    
+  }
+  @else if $direction == 'left' or $direction == 'right' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #{$direction}: -40px;
+  @if $direction == 'top' { border-bottom-color: red; }
+  @else if $direction == 'bottom' { border-top-color: red; }
+  @else if $direction == 'left' { border-right-color: red; }
+  @else if $direction == 'right' { border-left-color: red; }
+}
+
+.element {
+  &:before {
+    @include arrow("top");
+  }
+}

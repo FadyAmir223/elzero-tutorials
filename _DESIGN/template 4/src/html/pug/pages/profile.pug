@@ -1,0 +1,42 @@
+extend _template
+
+block page-name
+  - let name = "profile"
+
+block page-content
+  .dev-profile.mb-3
+    .dev.text-capitalize.text-center
+      .dev-container
+        img(src="../../image/avatar.png", alt="")
+        h3.name.mb-0.fw-bold fezza
+        p.lv level 20
+        +bar("70")
+        .rate
+          - for (let i=0; i<5; i++)
+            i.fa-solid.fa-star
+        p 550 rating
+    ul.data.list-unstyled.mb-0
+      +user-profile("general information", true, ["full name", "fady amir"], ["gender", "male"], ["country", "egypt"])
+      +user-profile("personal information", false, ["email", "o@nn.sa"], ["phone", "01282938903"], ["date of birth", "04/08/1999"])
+      +user-profile("job information", true, ["title", "full stack developer"], ["programming language", "python"], ["years of experience", "+1"])
+      +user-profile("billing information", false, ["payment method", "paypal"], ["email", "email@website.com"], ["subscription", "monthly"])
+
+  .row
+    .col-lg-4: .skills.mb-3.mb-lg-0
+      +combo-title("my skills", "complete skills list")
+      ul.list-unstyled.mb-0
+        +skill("fezza", "Pugjs", "HAML")
+        +skill("CSS", "SASS", "Stylus")
+        +skill("JavaScript", "TypeScript")
+        +skill("Vuejs", "Reacjs")
+        +skill("Jest", "Jasmine")
+        +skill("PHP", "Laravel")
+        +skill("Python", "Django")
+
+    .col-lg-8: .activities
+      +combo-title("latest activities", "latest activities done by the user")
+      .list
+        +activity("activity-01.png", "store", "bought the mastering python course", "18:10")
+        +activity("activity-02.png", "academy", "got the PHP certificate", "16:05")
+        +activity("activity-03.png", "badges", "unlock the 10 skills badge", "18:05")
+        +activity("activity-01.png", "store", "bought the typescript course", "12:05")

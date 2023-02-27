@@ -1,0 +1,251 @@
+//- global
+mixin section-header(txt)
+  h1.section-header.text-capitalize.tw-bold.position-relative= txt
+
+mixin single-title(txt)
+  h2.single-title.fs-4.text-capitalize.fw-bold= txt
+
+mixin combo-title(line_1, line_2)
+  .combo-title
+    h2.title.text-capitalize= line_1
+    p.color-grey.text-capitalize= line_2
+
+//- dashboard
+mixin user-info(main, sub)
+  .col-md-4
+    .name.text-capitalize= main
+      span.d-block= sub
+
+mixin target(icon, txt, num, width, color)
+  .target
+    .icon(style=`background-color:${color}20`): i(class=icon style=`color:${color}`)
+    .data
+      span.txt= txt
+      span.num= num
+      .bar(style=`background-color:${color}20`)
+        span(style=`width:${width};background-color:${color};--color:${color}` data-width=width)
+
+mixin ticket(icon, num, txt)
+  .ticket.text-center
+    i(class=icon)
+    span.num.d-block= num
+    span.txt.d-block.text-capitalize.color-grey= txt
+
+mixin news(path, title, txt, time)
+  .item.d-flex.align-items-center
+    .img.img-fluid.me-md-3: img(src="../../image/news-" + path, alt="")
+    .txt
+      h3.title.text-capitalize.fw-bold.h6= title
+      p.text-capitalize.color-grey= txt
+    .ago: span.text-capitalize= time
+
+mixin task(title, txt, done)
+  .task.d-flex.align-items-center(class=done)
+    .txt
+      h3.title.text-capitalize.fw-bold.h6= title
+      p.text-capitalize.color-grey.mb-1= txt
+    .icon: i.fa-regular.fa-trash-can.delete
+
+mixin search(txt, count)
+  .item.d-flex.justify-content-between
+    span.key.text-capitalize= txt
+    span.value= count
+
+mixin upload(path, title, txt, size)
+  .item.d-flex.align-items-center
+    .img.img-fluid.me-md-3: img(src="../../image/" + path, alt="")
+    .txt
+      h3.title.text-capitalize.fw-bold.h6.mb-0= title
+      p.text-capitalize.color-grey= txt
+    .size: span.text-capitalize= size
+
+mixin reminder(txt, date)
+  .reminder
+    p.text-capitalize= txt
+    span.color-grey= date
+
+mixin platform(icon, follow, btn)
+  .platform
+    .icon: i(class=icon)
+    .content
+      span.text-capitalize= follow
+      a.text-capitalize(href="#")= btn
+
+mixin project-row(name, date, clint, price, team, status)
+  - let i = 0
+  tr
+    td(data-txt=headers[i++])= name
+    td(data-txt=headers[i++])= date
+    td(data-txt=headers[i++])= clint
+    td(data-txt=headers[i++]) $#{price}
+    td(data-txt=headers[i++]).team
+      - for (i in team)
+        img(src=`../../image/${team[i]}`, alt="")
+    td(data-txt=headers[i]): .stat.text-capitalize(class=status.replace(" ", "-"))= status
+
+//- settings -> global
+mixin switch(state=true)
+  label.switch-container
+    - if (state != true) state = false
+    input.switch-box(type="checkbox" checked=state)
+    .switch
+
+//- settings
+mixin info(txt, _placeholder)
+  .info
+    label.text-capitalize(for=txt)= txt
+    if (_placeholder.includes("@"))
+      .email
+        input.w-100(type="email" value=_placeholder disabled)
+        a(href="#") Change
+    else
+      input.w-100(type="text" placeholder=_placeholder)
+
+mixin sec-info(txt_main, txt_sub, _type)
+  .item
+    .txt
+      span.text-capitalize= txt_main
+      p.text-capitalize.color-grey= txt_sub
+    if (_type=="btn")
+      a.btn-blue.text-capitalize(href="#") change
+    else if (_type=="switch")
+      +switch
+    else if (_type=="tech")
+      a.btn-grey.text-capitalize(href="#") devices
+
+mixin social-info(icon, txt)
+  .platform
+    i(class=icon)
+    input(type="text" placeholder=txt + " username")
+
+mixin checkbox(txt, isChecked)
+  .checkbox-container
+    - let _txt = txt.replace(" ", "-")
+    input(type="checkbox" id=_txt checked=isChecked)
+    label(for=_txt)= txt
+
+mixin radiobox(txt, _name, isChecked)
+  .radio-container
+    - let _txt = txt.replace(" ", "-")
+    input(type="radio" id=_txt name=_name checked=isChecked)
+    label(for=_txt)= txt
+
+mixin radio-icon(txt, _name, icon, isChecked)
+  .radio-icon
+    - let _txt = txt.replace(" ", "-")
+    input(type="radio", name=_name id=_txt checked=isChecked)
+    label(for=_txt) #[.icon: i(class=icon)] #{txt}
+
+//- profile
+mixin user-profile(title, state, ...params)
+  li.color-grey
+    h4.title= title
+    .txt
+      - for (i in params)
+        p #{params[i][0]} #[span(class=params[i][1].includes("@") == true ? 'text-lowercase' : '') #{params[i][1]}]
+      +switch(state)
+
+mixin skill(...params)
+  li.skill
+    - for (i in params)
+      span= params[i]
+
+mixin activity(path, txt_1, txt_2, txt_3, txt_4 = "yesterday")
+  .activity
+    img(src="../../image/" + path, alt="")
+    .txt.text-capitalize
+      span.d-block= txt_1
+      span.color-grey.d-block= txt_2
+    .time.text-end
+      span.d-block= txt_3
+      span.color-grey.d-block.text-capitalize= txt_4
+
+//- projects
+mixin bar(progress, color)
+  .bar: span(style=`width:${progress}%;background-color:${color}`)
+
+mixin project(title, txt, team, skills, progress, color, money, date)
+  .project.text-capitalize
+    .title
+      h4.h6= title
+      p.mb-4= txt
+    .team
+      - for (i in team)
+        a(href="#"): img(src="../../image/" + team[i], alt="")
+    ul.team-skills.list-unstyled
+      +skill(...skills)
+    .earn
+      +bar(progress, color)
+      span.money #[i.fa-solid.fa-dollar-sign] #{money}
+    span.date= date
+
+//- courses
+mixin course(cover, instructor, title, txt, ppl, price)
+  .course.p-0
+    .cover: img(src=`../../image/${cover}`, alt="")
+    img.instructor(src=`../../image/${instructor}`, alt="")
+    .content.text-capitalize
+      .txt
+        h4.title.h6.fw-bold= title
+        p= txt
+      .info
+        span #[i.fa-regular.fa-user] #{ppl}
+        span #[i.fa-solid.fa-dollar-sign] #{price}
+        a.btn-blue(href="#") course info
+
+//- friends
+mixin friend(img, name, description, _friends, _projects, _articles, date, isVIP)
+  .friend
+    .contact
+      a(href="#") #[i.fa-solid.fa-phone]
+      a(href="#") #[i.fa-regular.fa-envelope]
+    .user.text-center
+      img(src=`../../image/${img}`, alt="")
+      h4.h6.fw-bold.text-capitalize.m-0= name
+      p.color-grey= description
+    .info.text-capitalize
+      - if (isVIP)
+        span.vip VIP
+      span #[i.fa-regular.fa-face-smile.fa-fw] #{_friends}  friend
+      span #[i.fa-solid.fa-code-commit.fa-fw] #{_projects} projects
+      span #[i.fa-regular.fa-newspaper.fa-fw] #{_articles} articles
+    .react.text-capitalize
+      span joined #{date}
+      .show-remove
+        a.show.btn-blue(href="#") profile
+        a.remove.btn-shape(href="#") remove
+
+//- files
+mixin file(path, file_name, name, date, size)
+  .file
+    i.fa-solid.fa-download
+    .file-img.text-center
+      img(src=`../../image/${path}`, alt="")
+      span.d-block.file-name= file_name
+    span.name.text-capitalize= name
+    .info
+      span.date= date
+      span.size= size
+
+mixin file-type(type, num, size,icon)
+  .file-type
+    .icon: i(class=icon)
+    .txt.text-capitalize
+      span.type #{type} files
+      span.num= num
+    span.size= size
+
+//- plans
+mixin plan(type, price, color, curr, ...params)
+  .plan
+    .price.text-center(style=`background-color:${color};outline-color:${color}`)
+      h2.cat.h4.text-capitalize.mb-0= type
+      span.num #[span $] #{price}
+    ul.list-unstyled
+      - for (i in params)
+        li.text-capitalize #[i.fa-solid.fa-fw(class=params[i][1] ? "yes fa-check" : "no fa-xmark")] #{params[i][0]}
+          i.fa-solid.fa-circle-info.help
+    if (curr)
+      p.curr.text-capitalize.text-center.mb-0.color-grey this is your current plan
+    else
+      a.join.btn-shape.text-capitalize(href="#" style=`background-color:${color}`) join

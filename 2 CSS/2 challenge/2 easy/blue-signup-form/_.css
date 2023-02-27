@@ -1,0 +1,81 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+input[placeholder]::-webkit-input-placeholder { 
+    font-family: FontAwesome;
+}
+
+.page {
+    width: 350px;
+    margin: auto;
+    padding: 25px;
+    border: 25px solid #2196F3;
+    text-align: center;
+}
+.title {
+    color: black;
+    font-size: 25px;
+}
+.data {
+    display: flex;
+    flex-wrap: wrap;
+}
+.data > div {
+    width: 100%;
+}
+input {
+    border: none;
+    margin-bottom: 1em;
+}
+input[placeholder] {
+    width: 90%;
+    background-color: inherit;
+    border-bottom: 1px solid #DDD;
+    line-height: 1.7;
+}
+.data div i {
+    font-size: 9px;
+}
+input[type="submit"] {
+    width: 100%;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.register {
+    font-size: 13px;
+    border-bottom: 1px dashed #DDD;
+    padding-top: 1.6em;
+    padding-bottom: 2.6em;
+}
+.register span {
+    color: #2196F3;
+}
+.text {
+    color: #00000080;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+}
+.platforms i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+}
+.platforms i[class*='facebook'] {
+    background-color: #0D40C6;
+}
+.platforms i[class*='twitter'] {
+    background-color: #2196F3;
+}
+.platforms i[class*='google'] {
+    background-color: #f65314;
+}

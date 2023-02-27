@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+:root {
+    --color-1: #1998FF;
+    --color-2: #545454;
+    --font-color: white;
+    --circle: 150px;
+    --small-circle: 75px;
+    --border: 12px;
+}
+.page {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    padding: 30px;
+    padding-top: 10%;
+    margin: auto;
+    width: 50vw;
+}
+
+.package.hot {
+    background-color: var(--color-1);
+    color: var(--font-color);
+}
+.package:not(.hot) {
+    background-color: var(--font-color);
+    color: var(--color-2);
+}
+.package.hot button {
+    background-color: var(--font-color);
+    color: var(--color-1);
+}
+.package:not(.hot) button {
+    background-color: var(--color-1);
+    color: var(--font-color);
+}
+
+.package .circle,
+.package .circle::before,
+.package .circle::after {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50%;
+}
+.package .circle {
+    font-size: 20px;
+    color: var(--font-color);
+    width: var(--circle);
+    height: var(--circle);
+}
+.package .circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.package.hot .circle {
+    background-color: var(--color-1);
+}
+.package:not(.hot) .circle {
+    background-color: var(--color-2);
+}
+
+.package.hot .circle::after {
+    content: "hot";
+    text-transform: lowercase;
+    background-color: var(--font-color);
+    color: var(--color-1);
+    width: var(--small-circle);
+    height: var(--small-circle);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+    border: 1px solid var(--color-1);
+    z-index: 2;
+}
+.package .circle::before {
+    content: "";
+    width: calc(var(--circle) + var(--border) * 2);
+    height: calc(var(--circle) + var(--border) * 2);
+    transform: translate(calc(-1 * var(--border)), calc(-1 * var(--border)));
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--font-color);
+    z-index: -1;  /* not working bcs of position.. but how? */
+}
+.package.hot .circle::before {
+    border: 1px solid var(--color-1);
+}
+.package:not(.hot) .circle::before {
+    border: 1px solid var(--color-2);
+}
+.package .circle .price {
+    font-size: 40px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.package {
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+.package .title {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 2.5;
+}
+ul li {
+    width: 100%;
+    border-bottom: 1px solid var(--color-2);
+}
+ul > :first-child {
+    border-top: 1px solid var(--color-2);
+}
+
+.package button {
+    border-radius: 99px;
+    padding: 10px;
+    border: none;
+    letter-spacing: 1px;
+    font-size: 18px;
+}

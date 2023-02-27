@@ -1,0 +1,12 @@
+extends _template
+
+block page-name
+  - let name = "courses"
+
+block page-content
+  .course-list
+    +course("course-01.jpg", "team-01.png", "mastering web design", "master the art of web designing and mocking, prototyping and creating web design architecture", "950", "165")
+    +course("course-02.jpg", "team-02.png", "data structure and algorithms", "master the art of datastructure and famouse algorithms like sorting, dividing and conquering", "1150", "210")
+    +course("course-03.jpg", "team-01.png", "responsive web design", "mastering responsive web design and media queries and know everything about breakpoints", "650", "90")
+    +course("course-04.jpg", "team-03.png", "mastering python", "mastering python to perpare for data science and automating things in your life", "950", "250")
+    +course("course-05.jpg", "team-03.png", "PHP examples", "PHP tutorials and examples and practice on web application and connecting with databases", "850", "150")

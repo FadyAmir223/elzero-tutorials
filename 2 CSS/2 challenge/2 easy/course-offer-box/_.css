@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 10px;
+}
+.page {
+    width: 900px;
+    height: 750px;
+    background-color: #51509B;
+    border: 15px solid white;
+    border-radius: 5px;
+    padding: 80px;
+}
+.head .title {
+    font-size: 35px;
+    color: white;
+    margin-bottom: 20px;
+}
+.head .text {
+    margin-bottom: 30px;
+}
+.package {
+    display: flex;
+    align-items: center;
+}
+.package > * {
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+}
+.package .premium {
+    height: 450px;
+    width: 500px;
+}
+.package .essensial {
+    height: 320px;
+    width: 300px;
+    box-shadow: inset 10px 0 10px -10px gray;
+    z-index: 2;
+}
+.package .premium .title {
+    font-size: 25px;
+    z-index: 1;
+    position: relative;
+}
+.package .premium .title::after {
+    content: "";
+    width: 195px;
+    height: 5px;
+    background-color: yellow;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 3px;
+    left: 36px;
+}
+.package .essensial .title {
+    font-size: 17px;
+    z-index: 1;
+    position: relative;
+}
+.package .essensial .title::after {
+    content: "";
+    width: 140px;
+    height: 5px;
+    background-color: yellow;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 3px;
+    left: 19px;
+}
+li {
+    color: black;
+    padding: 10px;
+    border-bottom: 1px solid #DDDDDD60;
+}
+.price {
+    color: #4A5568;
+    font-size: 40px;
+    display: inline-block;
+}
+sup {
+    font-size: 21px;
+}
+sub {
+    font-size: 14px;
+}
+button {
+    border: none;
+    border-style: none;
+    background-color: #E5AF40;
+    color: white;
+    padding: 7px;
+}
+.premium button {
+    margin-left: 100px;
+}
+.essensial button {
+    margin-left: 17px;
+}
+.info {
+    margin-top: 40px;
+}
+span {
+    font-size: large;
+}
+.head > .title::after {
+    content: "✌";
+}
+.premium > .title::before {
+    content: "⭐";
+    background-color: transparent;
+}
+.essensial > .title::before {
+    content: "✔ ";
+    color: yellow;
+}

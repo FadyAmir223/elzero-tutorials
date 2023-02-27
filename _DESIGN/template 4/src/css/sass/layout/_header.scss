@@ -1,0 +1,55 @@
+header {
+  margin-left: $sidebar-lg;
+
+  @media (max-width: 767px) {
+    margin-left: $sidebar-sm;
+  }
+
+  .search {
+    input {
+      border: 1px solid #ccc;
+      padding: 10px 10px 10px 30px;
+      width: 160px;
+      transition: width $t-time;
+      font-size: 13px;
+
+      &:focus {
+        outline: none;
+        width: 200px;
+      }
+
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+
+    svg {
+      left: 10px;
+      top: 51%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
+  }
+
+  .user-profile {
+    .notif {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $red;
+        width: 10px;
+        height: 10px;
+        top: -3px;
+        right: -4px;
+        border-radius: 50%;
+      }
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

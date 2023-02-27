@@ -1,0 +1,11 @@
+extends _template
+
+block page-name
+  - let name = "plans"
+
+block page-content
+  include ../helpers/_colors
+  .plan-list
+    +plan("free", "0.00", green, "", ["access all text lessons", " "], ["access all video lessons", " "], ["appear on leaderboard", " "], ["browse content without ads", ""], ["access all assignments", ""], ["get daily prizes", ""], ["earn certificate", ""], ["1 GB space for hosting files", ""], ["access badge system", ""])
+    +plan("basic", "7.99", blue, "", ["access all text lessons", " "], ["access all video lessons", " "], ["appear on leaderboard", " "], ["browse content without ads", " "], ["access all assignments", " "], ["get daily prizes", " "], ["earn certificate", " "], ["1 GB space for hosting files", ""], ["access badge system", ""])
+    +plan("premium", "19.99", orange, " ", ["access all text lessons", " "], ["access all video lessons", " "], ["appear on leaderboard", " "], ["browse content without ads", " "], ["access all assignments", " "], ["get daily prizes", " "], ["earn certificate", " "], ["1 GB space for hosting files", " "], ["access badge system", " "])

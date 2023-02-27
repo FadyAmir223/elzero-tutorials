@@ -1,0 +1,115 @@
+.page {
+    width: 1000px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+}
+.page > * {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+img {
+    width: 1000px;
+    position: absolute;
+    filter: grayscale(80%);
+    opacity: 0.6;
+    background-color: black;
+    z-index: -1;
+}
+.circle {
+    border-radius: 50%;
+    height: auto;
+    font-size: 70px;
+}
+.square {
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.gray {
+    background-color: #515961;
+}
+.yellow {
+    background-color: #FFEB00;
+}
+.white {
+    background-color: white;
+}
+.left {
+    color: white;
+}
+.right {
+    color: black;
+}
+.gray.circle {
+    color: white;
+}
+.yellow.circle {
+    color: #515961;
+}
+/* customize */
+.gray.square.left {
+    left: 100px;
+    top: 70px;
+}
+.white.square.left {
+    left: 100px;
+    top: 128px;
+    z-index: 4;
+}
+.white.square.right {
+    left: 740px;
+    top: 260px;
+    z-index: 3;
+}
+.yellow.square.right {
+    left: 700px;
+    top: 318px;
+    z-index: 3;
+}
+
+.gray.circle.mobile {
+    width: 230px;
+    height: 230px;
+    top: 150px;
+    left: 210px;
+    z-index: 3;
+}
+.yellow.circle.laptop {
+    width: 280px;
+    height: 280px;
+    top: 100px;
+    left: 360px;
+    z-index: 2;
+}
+.gray.circle.gear {
+    width: 230px;
+    height: 230px;
+    top: 160px;
+    left: 570px;
+    z-index: 1;
+}
+.yellow.circle.lightbulb {
+    width: 210px;
+    height: 210px;
+    top: 80px;
+    left: 665px;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

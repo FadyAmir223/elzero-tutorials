@@ -1,0 +1,16 @@
+// Write Mixin Code Here
+$list: '.', ':-moz-', '::-moz-', ':-ms-input-', '::-webkit-input-';
+@mixin placeholder {
+  @each $i in $list {
+    &#{$i}placeholder {
+      @content;
+    }
+  }
+}
+
+// Using
+textarea {
+  @include placeholder {
+    color: #777;
+  }
+}

@@ -1,0 +1,31 @@
+:root {
+    --background: #009688
+}
+
+h1 {
+    width: 150px;
+    margin: 20px auto;
+    background-color: var(--background);
+    text-align: center;
+    position: relative;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    width: 11%;
+    height: 100%;
+    background-color: var(--background);
+    position: absolute;
+    transform: skewX(25deg);
+}
+
+h1::before {
+    left: -8px;
+    bottom: 0;
+}
+
+h1::after {
+    left: -35px;
+    bottom: 0;
+}

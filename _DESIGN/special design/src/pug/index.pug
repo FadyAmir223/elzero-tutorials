@@ -1,0 +1,158 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap")
+
+    link(rel="stylesheet" href="../css/all.min.css")
+    link(rel="stylesheet" href="../css/bootstrap-grid.min.css")
+    link(rel="stylesheet" href="../css/normalize.css")
+    link(rel="stylesheet" href="../css/style.css")
+
+    title Document
+  body
+
+    .pop_up-gallery
+      .overlay
+      .content
+        h3.title fezza
+        img(src="../images/01.jpg", alt="")
+        button.close X
+
+    .sidebar
+      .icon #[i.fa.fa-gear.gear]
+      .colors
+        h4.title colors
+        ul
+          - for (color of ['#FF9800', '#E91E63', '#009688', '#03A9F4', '#4CAF50'])
+              li(style=`background-color:${color}` data-color=color)
+      .rand-background
+        h4.title random backgrounds
+        .opt
+          span.true(data-background="true") yes
+          span.false(data-background="false") no
+      .show-bullets
+        h4.title show bullets
+        .opt
+          span.true(data-bullet="true") yes
+          span.false(data-bullet="false") no
+      button.reset reset options
+
+    header: .container
+      .logo special design
+      nav
+        ul
+          li: a(href="#") about
+          li: a(href="#") skills
+          li: a(href="#") gallery
+          li: a(href="#") timeline
+          li: a(href="#") features
+          li: a(href="#") testimonials
+      .icon: i.fas.fa-bars.toggle-menu.d-lg-none
+
+    .landing.section
+      .overlay
+      .txt
+        h1.main-title we are #[span creative] agency
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste
+
+    .about.section: .container
+      .txt
+        h2.title about us
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsum, tenetur dolores esse magni ratione distinctio! Quod iusto neque fuga, maxime quos nostrum quibusdam dicta deserunt blanditiis non voluptate id?
+      .img: img(src="../images/about-us.jpg", alt="")
+
+    .skills.section: .container
+      h2.title our skills
+      .skill-list
+        mixin skill (txt, progress)
+          .skill
+            span.name= txt
+            .bar: .skill-progress(data-width=`${progress}%`)
+        +skill("HTML", "10")
+        +skill("CSS", "20")
+        +skill("JavaScript", "30")
+        +skill("Python", "40")
+        +skill("PHP", "50")
+        +skill("MySQL", "60")
+
+    .gallery.section: .container
+      h2.title our gallery
+      .img-list
+        img(src="../images/01.jpg", alt="IMG_")
+        img(src="../images/02.jpg", alt="IMG_")
+        img(src="../images/03.jpg", alt="IMG_")
+        img(src="../images/04.jpg", alt="IMG_")
+        img(src="../images/05.jpg", alt="IMG_")
+        img(src="../images/06.png", alt="")
+        img(src="../images/07.jpg", alt="")
+        img(src="../images/08.jpg", alt="")
+        img(src="../images/09.jpg", alt="")
+        img(src="../images/10.jpg", alt="")
+        .ghost
+        .ghost
+        .ghost
+        .ghost
+
+    .timeline.section: .container
+      .event-list
+        mixin event(title, txt, direction="left")
+          div.direction(class=direction): .event
+            h3.title= title
+            p= txt
+        .year 2018
+        +event("testing heading", "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?")
+        +event("testing heading", "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?", "right")
+        .year 2019
+        +event("testing heading", "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?")
+        +event("testing heading", "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?", "right")
+
+    .features.section: .container
+      h2.title our features
+      .row
+        mixin feature(img, title, txt)
+          .col-md-6.col-lg-4: .feature
+            img(src=`../images/${img}`, alt="")
+            h3= title
+            p= txt
+        +feature("programming.svg", "development", "We are professional marketeers, we will do anything you imagine in no time.")
+        +feature("marketing.svg", "marketing", "We are professional marketeers, we will do anything you imagine in no time.")
+        +feature("hosting-icon.svg", "hosing", "We are professional marketeers, we will do anything you imagine in no time.")
+        +feature("mobile-app.svg", "mobile develope", "We are professional marketeers, we will do anything you imagine in no time.")
+        +feature("graphic-design.svg", "cloud and servers", "We are professional marketeers, we will do anything you imagine in no time.")
+        +feature("web-design.svg", "seo", "We are professional marketeers, we will do anything you imagine in no time.")
+
+    .testimonials.section: .container
+      h2.title testimonials
+      .row
+        mixin testimonial(txt, name, description)
+          .col-md-4.mb-sm-3.mb-md-0: .testimonial
+            p= txt
+            h4.name= name
+            span= description
+        +testimonial("I'am very happy with the product its amazing and i recieve it very fast and the price was amazing.", "ahmed mosaad", "CEO at company")
+        +testimonial("I'am very happy with the product its amazing and i recieve it very fast and the price was amazing.", "mohamed ibrahim", "CEO at company")
+        +testimonial("I'am very happy with the product its amazing and i recieve it very fast and the price was amazing.", "sherif ashraf", "CEO at company")
+
+    .contact.section
+      .overlay
+      .container
+        h2.title contact us
+        form(action="")
+          input(type="text" placeholder="your name")
+          input(type="text" placeholder="your phone")
+          input(type="email" placeholder="your email")
+          input(type="tex" placeholder="your subject")
+          textarea(placeholder="your message")
+          input(type="submit" value="send")
+
+    footer created with love by fady amir
+
+    script(src="../js/all.min.js")
+    script(src="../js/bootstrap.bundle.min.js")
+    script(src="../js/script.js")

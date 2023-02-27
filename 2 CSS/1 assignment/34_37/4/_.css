@@ -1,0 +1,19 @@
+p {
+    counter-increment: name;
+    border-right: 5px solid #F44336;
+    background-color: #EFEFEF;
+    width: 300px;
+    padding: 10px;
+}
+
+p::before {
+    content: counter(name);
+    background-color: #F44336;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: -10px;
+}

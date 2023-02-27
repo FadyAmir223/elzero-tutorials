@@ -1,0 +1,53 @@
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color: #eee;
+    color: black;
+    text-transform: capitalize;
+    cursor: pointer;
+    overflow: hidden;
+}
+span {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    background-color: #333;
+    color: white;
+    min-width: 150px;
+    padding: 5px 10px;
+    transition: 0.3s;
+    opacity: 0;
+}
+span::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #333 transparent transparent;
+}
+button:hover {
+    overflow: visible;
+}
+button:hover span {
+    opacity: 1;
+}
+[data-position="bottom"] span {
+    top: auto;
+    bottom: -70px;
+}
+[data-position="bottom"] span::before {
+    border-color: transparent transparent #333;
+    bottom: auto;
+    top: -20px;
+}

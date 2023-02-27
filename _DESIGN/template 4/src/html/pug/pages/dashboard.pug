@@ -1,0 +1,136 @@
+extends _template
+
+block page-name
+  - let name = "dashboard"
+
+block page-content
+  .row
+    .col-lg-6: .welcome.mb-3
+      .msg.d-flex.justify-content-between
+        .txt: +combo-title("welcome", "fezza")
+        img.hide-mobile(src="../../image/welcome.png", alt="")
+      .user.position-relative.bg-white
+        img.rounded-circle.position-absolute(src="../../image/avatar.png", alt="")
+        .user-info.text-center
+          .row
+            +user-info("fady amir", "developer")
+            +user-info("80", "projects")
+            +user-info("$8500", "earned")
+        .profile-btn.text-end: a(href="#").btn-blue.text-capitalize profile
+
+    .col-lg-6: .draft.mb-3
+      +combo-title("quick draft", "write a draft for your ideas")
+      input(type="text" placeholder="Title")
+      textarea(placeholder="Your Thought")
+      .text-end: input.btn-blue.text-capitalize(type="submit", value="save")
+
+    .col-lg-6: .targets.mb-3
+      +combo-title("yearly targets", "targets for this year")
+      include ../helpers/_colors
+      .target-list
+        +target("fa-solid fa-dollar-sign fa-lg", "money", "$20.000", "80%", blue)
+        +target("fa-solid fa-code fa-lg", "projects", "24", "55%", orange)
+        +target("fa-solid fa-user fa-lg", "team", "12", "75%", green)
+
+    .col-lg-6: .tickets.mb-3
+      +combo-title("tickets statistics", "everything about support tickets")
+      .ticket-list
+        +ticket("fa-regular fa-rectangle-list fa-2x", "2500", "total")
+        +ticket("fa-solid fa-spinner fa-2x", "500", "pending")
+        +ticket("fa-regular fa-circle-check fa-2x", "1900", "closed")
+        +ticket("fa-regular fa-rectangle-xmark fa-2x", "100", "deleted")
+
+    .col-lg-6: .news.mb-3
+      +single-title("latest news")
+      .news-list
+        +news("01.png", "created SASS section", "new SASS examples & tutorials", "3 days ago")
+        +news("02.png", "changed the design", "a brand nwe website design", "5 days ago")
+        +news("03.png", "team increased", "3 developers joined the team", "7 days ago")
+        +news("04.png", "added payemnt gateway", "many new payment gateways added", "9 days ago")
+
+    .col-lg-6: .tasks.mb-3
+      +single-title("latest tasks")
+      .task-list
+        +task("Record One New Video", "Record Python Create Exe Project")
+        +task("Write Article", "Write Low Level vs High Level Languages")
+        +task("Finish Project", "Publish Academy Programming Project")
+        +task("Attend The Meeting", "Attend The Project Business Analysis Meeting", "done")
+        +task("Finish Lesson", "Finish Teaching Flex Box")
+
+    .col-lg-6: .search.mb-3
+      +single-title("top search items")
+      .cont
+        .head.d-flex.justify-content-between.mb-2
+          .keyword.color-grey.text-capitalize keyword
+          .count.color-grey.text-capitalize search count
+        +search("programming", "220")
+        +search("javaScript", "180")
+        +search("PHP", "160")
+        +search("code", "145")
+        +search("design", "110")
+        +search("logic", "95")
+
+    .col-lg-6: .uploads.mb-3
+      +single-title("latest uploads")
+      .list-uploads
+        +upload("pdf.svg", "my-file.pdf", "elzero", "2.9mb")
+        +upload("avi.svg", "My-Video-File.avi", "admin", "4.9mb")
+        +upload("psd.svg", "My-Psd-File.pdf", "osama", "4.5mb")
+        +upload("zip.svg", "My-Zip-File.pdf", "user", "8.9mb")
+        +upload("dll.svg", "My-DLL-File.pdf", "admin", "4.9mb")
+        +upload("eps.svg", "My-Eps-File.pdf", "designer", "8.9mb")
+
+    .col-lg-6: .project.mb-3
+      +single-title("latest project progress")
+      img.hide-mobile(src="../../image/project.png", alt="")
+      ul.list-unstyled
+        li got the project
+        li started the project
+        li the project about to finish
+        li.current test the project
+        li.undone finish the project & get money
+
+    .col-lg-6: .reminders.mb-3
+      +single-title("reminders")
+      .reminder-list
+        +reminder("check my task list", "28/09/2022 - 12:00am")
+        +reminder("check my projects", "26/10/2022 - 12:00am")
+        +reminder("call all my clients", "05/11/2022 - 12:00am")
+        +reminder("finish the development workshop", "20/12/2022 - 12:00am")
+
+    .col-lg-6: .post.mb-3
+      +single-title("latest post")
+      .post-user.d-flex
+        img(src="../../image/avatar.png", alt="")
+        .txt
+          span.name.fw-bold.d-block Fezza
+          span.time.color-grey.text-capitalize about 3 hours ago
+      p.post-content.text-sm-center.text-md-start You Can Fool All Of The People Some Of The Time, And Some Of The People All Of The Time, But You Can't Fool All Of The People All Of The Time.
+      .react.d-flex.justify-content-between.color-grey
+        .likes #[i.fa-regular.fa-heart] 1.8K
+        .comments #[i.fa-regular.fa-comments] 500
+
+    .col-lg-6: .media.mb-3
+      +single-title("social media stats")
+      .media-list
+        +platform("fa-brands fa-twitter fa-2x", "90K followers", "follow")
+        +platform("fa-brands fa-facebook-f fa-2x", "2M like", "like")
+        +platform("fa-brands fa-youtube fa-2x", "1M subs", "subscribe")
+        +platform("fa-brands fa-linkedin fa-2x", "70K followers", "follow")
+
+  .projects
+    +single-title("projects")
+    .responsive-table: table
+      thead
+        tr
+          -
+            let headers = ["name", "finish date", "clint", "price", "team", "status"]
+          each i in headers
+            th= i
+      tbody
+        +project-row("Ministry Wikipedia", "10 May 2022", "Ministry", "5300", ["team-01.png", "team-02.png", "team-03.png", "team-05.png"], "pending")
+        +project-row("Elzero Shop", "12 Oct 2021", "Elzero Company", "1500", ["team-01.png", "team-02.png", "team-05.png"], "in progress")
+        +project-row("Bouba App", "05 Sep 2021", "Bouba", "800", ["team-02.png", "team-03.png"], "completed")
+        +project-row("Mahmoud Website", "22 May 2021", "Mahmoud", "600", ["team-01.png", "team-02.png"], "completed")
+        +project-row("Sayed Website", "24 May 2021", "Sayed", "300", ["team-01.png", "team-03.png"], "rejected")
+        +project-row("Arena Application", "01 Mar 2021", "Arena Company", "2600", ["team-01.png", "team-02.png", "team-03.png", "team-04.png"], "completed")

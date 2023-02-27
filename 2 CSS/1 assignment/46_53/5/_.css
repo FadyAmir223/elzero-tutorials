@@ -1,0 +1,56 @@
+:root {
+    --width: 600px;
+    --height: 300px;
+}
+
+body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(var(--width) / -2);
+    margin-top: calc(var(--height) / -2);
+}
+
+.parent {
+    width: var(--width);
+    height: var(--height);
+    background-color: #EEEEEE;
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.parent div {
+    display: flex;
+    width: 15%;
+    height: 45%;
+    justify-content: center;
+    align-items: center;
+}
+
+.one {
+    background-color: #FF9800;
+    order: 2;
+}
+
+.two {
+    background-color: #8BC34A;
+    order: 3;
+}
+
+.three {
+    background-color: #795548;
+    order: 4;
+}
+
+.four {
+    background-color: #673AB7;
+    order: 1;
+}
+
+.two,
+.four {
+    align-self: flex-end;
+}

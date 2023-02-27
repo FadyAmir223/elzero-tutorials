@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="_.css" />
+  </head>
+  <body>
+    <div class="test">
+      <h3 class="title">typign speed test game</h3>
+      <div class="container">
+        <div class="msg">
+          you are playing on <span class="lv"></span> level & 
+          you have <span class="sec"></span> seconds to type the word
+        </div>
+        <button class="start">start playing</button>
+        <h3 class="word"></h3>
+        <input type="text" />
+        <div class="words"></div>
+        <div class="stat">
+          <p class="time">time left: <span class="remain"></span> seconds</p>
+          <p class="score">
+            score: <span class="score-value"></span> 
+            from: <span class="word-length"></span>
+          </p>
+        </div>
+        <p class="final"></p>
+        <div class="features">
+          <div class="level">
+            <label for="lv">level</label>
+            <select id="lv">
+              <option value="easy">Easy</option>
+              <option value="normal">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <button class="show-score">show score</button>
+        </div>
+        <div class="score-list">
+        </div>    
+      </div>
+    </div>
+    <script src="_.js"></script>
+  </body>
+</html>

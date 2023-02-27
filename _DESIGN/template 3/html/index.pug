@@ -1,0 +1,220 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title template 3
+
+    link(rel="stylesheet", href="../../style/sass/main.css")
+    //- normalize
+    link(rel="stylesheet", href="../../style/normalize.css")
+    //- icons - font awesome
+    link(rel="stylesheet", href="../../style/all.min.css")
+    //- fonts
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet")
+  body
+
+    include _header
+
+    section.landing
+      .container
+        .text
+          h1.title Welcome, To Elzero World
+          p Here Iam gonna share everything about my life. Books Iam reading, Games Iam Playing, Stories and Events
+        img(src="../../images/landing-image.png", alt="")
+        a(href="#article"): i.fas.fa-angle-double-down.fa-2x
+
+    section.article#article
+      .main-title articles
+      .container
+        - for (let i = 1; i <= 8; i++)
+          .game
+            img(src='../../images/cat-0' + i + '.jpg', alt="")
+            .text
+              h3.title test title
+              p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit
+            .info
+              a read more
+              i.fas.fa-long-arrow-alt-right
+
+    .spikes
+
+    section.gallery#gallery
+      .main-title gallery
+        .container
+          each img in ['1.png', '2.png', '3.jpg', '4.png', '5.jpg', '6.png']
+            .img: .image: img(src='../../images/gallery-0' + img, alt="")
+
+    section.features#features
+      .main-title features
+      .container
+        each _feature, idx in ['quality', 'time', 'passion']
+          .feature
+            - let ctr = idx + 1
+            .image: img(src='../../images/features-0' + ctr + '.jpg', alt="")
+            .text
+              h2.title= _feature
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima
+            a(href="#") more
+
+    section.testimonials#testimonials
+      .main-title testimonials
+      .container
+        - let people = [{_name: 'mohamad farag', _stars: 4}, {_name: 'Mohamad Ibrahim', _stars: 4}, {_name: 'Shady Nabil', _stars: 4}, {_name: 'Amr Hendawy', _stars: 5}, {_name: 'Sherif Ashraf', _stars: 3}, {_name: 'Osama Mohamde', _stars: 3}]
+        each _person, idx in people
+          .card
+            - let ctr = idx + 1
+            img(src='../../images/avatar-0' + ctr + '.png', alt="")
+            .text
+              h3.name= _person._name
+              span full stack developer
+              .stars
+                - for (let i=0; i < _person._stars; i++)
+                  i.filled.fas.fa-star
+                - for (let i=0; i < 5 - _person._stars; i++)
+                  i.far.fa-star
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus
+
+    section.team#team
+      .main-title team members
+      .container
+        for _img, idx in ['jpg', 'jpg', 'jpg', 'jpg', 'png', 'png', 'jpg', 'jpg']
+          .member
+            .data
+              - let ctr = idx + 1
+              img(src='../../images/team-0' + ctr + '.' + _img, alt="")
+              .social
+                a(href="#"): i.fab.fa-facebook-f
+                a(href="#"): i.fab.fa-twitter
+                a(href="#"): i.fab.fa-linkedin-in
+                a(href="#"): i.fab.fa-youtube
+            .text
+              h3.name name
+              p simple short description
+
+    section.services#services
+      .main-title services
+      .container
+        each _service in [{_name: 'security', _icon: 'user-shield'}, {_name: 'fixing issues', _icon: 'tools'}, {_name: 'location', _icon: 'map-marked-alt'}, {_name: 'coding', _icon: 'laptop-code'}, {_name: 'security', _icon: 'palette'}, {_name: 'marketing', _icon: 'bullhorn'}]
+          .service
+            i(class='fas fa-' + _service._icon + ' fa-4x')
+            h3.title= _service._name
+            .info: a(href="#") details
+
+    section.skills#skills
+      .main-title our skills
+      .container
+        img(src="../../images/skills.png", alt="")
+        .list
+          each _skill in [{_name: 'HTML', _progress: '80%'}, {_name: 'CSS', _progress: '85%'}, {_name: 'JavaScript', _progress: '70%'}, {_name: 'Python', _progress: '80%'}]
+            .skill
+              .info
+                h3.title= _skill._name
+                .progress= _skill._progress
+              .bar: span(style='width: 0' data-width=_skill._progress)
+
+    section.work#work
+      .main-title how it works ?
+      .container
+        img(src="../../images/work-steps.png", alt="")
+        .list
+          each _item, idx in ['business analysis', 'architecture', 'developement']
+            .item
+              - let ctr = idx + 1
+              img(src='../../images/work-steps-' + ctr + '.png', alt="")
+              .text
+                h3.title= _item
+                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum recusandae debitis vel
+
+    section.events#events
+      .main-title latest events
+      .container
+        .content
+          img(src="../../images/events.png", alt="")
+          .info
+            .time
+              .box
+                .number 123
+                .unit days
+              .box
+                .number 11
+                .unit hours
+              .box
+                .number 50
+                .unit minutes
+              .box
+                .number 00
+                .unit seconds
+            .text
+              h3.title tech masters event 2022
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero tenetur doloremque iusto ut adipisci quam ratione aliquam excepturi nulla in harum, veritatis porro
+        form
+          input(type="email" name="" placeholder="enter your email" autofocus)
+          input(type="submit" placeholder="subscribe")
+      img.dot.top(src="../../images/dots.png", alt="")
+      img.dot.bottom(src="../../images/dots.png", alt="")
+
+    section.pricing#pricing
+      .main-title pricing-plans
+      .container
+        each _package in [{_name: 'basic', _price: '15', _features: {_GB: '10', _email: '5', _sub: '2', _db: '4'}}, {_name: 'advanced', _price: '25', _features: {_GB: '20', _email: '10', _sub: '5', _db: '8'}}, {_name: 'professional', _price: '45', _features: {_GB: '50', _email: '20', _sub: '10', _db: '20'}}]
+          .package
+            h3.title= _package._name
+            img(src='../../images/hosting-' + _package._name + '.png', alt="")
+            span.price #{_package._price} #[span.time per month]
+            ul
+              li #[i.fa-regular.fa-check] #{_package._features._GB} GB HDD space
+              li #[i.fa-regular.fa-check] #{_package._features._email} email addresses
+              li #[i.fa-regular.fa-check] #{_package._features._sub} subdomains
+              li #[i.fa-regular.fa-check] #{_package._features._db} databases
+              li #[i.fa-regular.fa-check] basic support
+            a(href="#") choose plan
+
+    section.videos#videos
+      .main-title top videos
+      .container
+        .content
+          .stamp
+            .title top videos #[i.fas.fa-random]
+            ul
+              each _stamp in [{_name: 'how to create sub domain', _time: '05:18'}, {_name: 'playing with the DNS', _time: '03:18'}, {_name: 'everything about the virtual hosts', _time: '05:25'}, {_name: 'how to monitor your website', _time: '04:16'}, {_name: 'uncharted beating the last boss', _time: '07:48'}, {_name: 'ys oaht in felghana overview', _time: '03:12'}, {_name: 'ys series all games ending', _time: '08:10'}]
+                li
+                  a(href="#")= _stamp._name
+                  span.time= _stamp._time
+          .video
+            img(src="../../images/video-preview.jpg", alt="")
+            p everything about the virtual hosts
+
+    section.stat#stat
+      .over-img
+      .container
+        h2.title our awesome stats
+        .list
+          each _item in [{_name: 'clients', _num: '150', _icon: 'user'}, {_name: 'projects', _num: '135', _icon: 'code'}, {_name: 'countries', _num: '50', _icon: 'globe-asia'}, {_name: 'money', _num: '500', _icon: 'money-bill-alt'}]
+            .item
+              i(class='far fa-' + _item._icon + ' fa-2x fa-fw')
+              span.number(data-stat=_item._num) 0
+              span.text= _item._name
+
+    section.discount#discount
+      .content
+        .over-img
+        .text
+          h2.title we have a discount
+          p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi asperiores consectetur, recusandae ratione provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel similique laborum dicta aperiam odit doloribus corporis.
+        img(src="../../images/discount.png", alt="")
+      .form
+        h2 request a discount
+        form(action="")
+          input(type="text" name="" placeholder="your name")
+          input(type="email" name="" placeholder="your email")
+          input(type="text" name="" placeholder="your phone")
+          textarea(name="" placeholder="tell us about your needs")
+          input(type="submit", value="Send")
+
+    include _footer
+
+    script(src="../../script.js") 

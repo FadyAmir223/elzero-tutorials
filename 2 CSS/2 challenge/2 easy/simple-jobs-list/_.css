@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.page {
+    width: 1300px;
+    background-color: black;
+    padding-top: 50px;
+    padding-bottom: 65px;
+    padding-left: 115px;
+    padding-right: 90px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+.top .title {
+    color: black;
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 40px;
+}
+.top .title::before {
+    content: "";
+    width: 90px;
+    height: 3px;
+    background-color: #2980B9;
+    position: absolute;
+    bottom: -70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.top .text {
+    color: #00000080;
+    line-height: 1.6;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.side {
+    color: black;
+    background-color: #EEE;
+    border-top: 3px solid #2980B9;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    left: 23px;
+    top: 258px;
+    font-size: 20px;
+    transform: rotate(-90deg);
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+    grid-template-rows: repeat(6, auto);
+}
+
+li {
+    display: grid;
+    grid-template-columns: auto 1fr 15% 15%;
+    background-color: #EEE;
+    padding: 20px;
+}
+li > * {
+    padding-left: 30px;
+}
+li img {
+    width: fit-content;
+    height: auto;
+    border-radius: 5px;
+}
+li .nd2-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+li .nd2-col .type {
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    color: white;
+}
+.type.freelancer {
+    background-color: green;
+}
+.type.part-time {
+    background-color: #2980B9
+}
+.type.full-time {
+    background-color: purple;
+}
+.type.partnership {
+    background-color: limegreen;
+}
+
+li .nd2-col .title {
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+li .nd2-col .info {
+    color: black;
+    width: 100%;
+    display: flex;
+}
+li .nd2-col .info > * {
+    margin-right: 15px;
+}
+li .nd2-col .info span {
+    color: #00000080;
+}
+
+li .rd3-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    line-height: 1.6;
+}
+li .rd3-col .city {
+    color: black;
+    font-size: 20px;
+}
+li .rd3-col .country {
+    color: #00000080;
+    font-size: 14px;
+}
+
+li .th4-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 2;
+}
+li .th4-col .price {
+
+}
+li .th4-col button {
+    width: 90%;
+    padding: 5px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+button {
+    color: white;
+    background-color: #2980B9;
+    border: none;
+    border-radius: 5px;
+}
+.page > button {
+    width: 17%;
+    padding: 15px;
+    font-size: 18px;
+}

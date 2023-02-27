@@ -1,0 +1,17 @@
+extend _template
+
+block page-name
+  - let name = "projects"
+
+block page-content
+  include ../helpers/_colors
+  .project-list
+    +project("fezza dashboard", "fezza dashboard project design, programming and hosting", ["team-01.png", "team-02.png", "team-03.png", "team-04.png", "team-05.png"], ["programming", "design", "hosting", "marketing"], "50", red, "2500", "15/10/2021")
+    +project("academy portal", "academy portal project design and porgramming", ["team-01.png", "team-02.png", "team-03.png"], ["programming", "design"], "80", green, "1800", "15/6/2022")
+    +project("chatting application", "chatting application project design", ["team-01.png", "team-02.png", "team-03.png"], ["design"], "950", blue, "100", "15/6/2022")
+    +project("ahmed dashboard", "ahmed dashboard project design, programming and hosting", ["team-01.png", "team-02.png", "team-03.png", "team-04.png"], ["programming", "design", "hosting", "marketing"], "60", green, "1700", "15/6/2022")
+    +project("ahmed portal", "ahmed portal project and design", ["team-01.png", "team-02.png", "team-03.png"], ["programming", "design"], "70", green, "850", "15/6/2022")
+    +project("mohamed application", "mohamed applicaton project design", ["team-01.png", "team-02.png", "team-03.png"], ["design"], "40", red, "950", "15/6/2022")
+    +project("mohamed dashboard", "mohamed dashboard project design, programming and hosting", ["team-01.png", "team-02.png", "team-03.png", "team-04.png"], ["programming", "design", "hosting", "marketing"], "65", green, "1950", "15/6/2022")
+    +project("mohamed portal", "mohamed dashboard project design and programming", ["team-01.png", "team-02.png", "team-03.png"], ["programming", "design"], "60", green, "1650", "15/6/2022")
+    +project("ahmed application", "mohamed applicaton project design", ["team-01.png", "team-02.png", "team-03.png"], ["design"], "90", green, "950", "15/6/2022")

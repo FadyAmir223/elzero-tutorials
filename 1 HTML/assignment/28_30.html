@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <form action="?" method="get">
+      <input type="text" name="Token" value="b92f1fc2fce391ad7af633723afd3055" hidden />
+      <div>
+        <label for="Username">Username</label>
+        <input
+          type="text"
+          name="Username"
+          id="Username"
+          autofocus
+          required
+          minlength="5"
+          maxlength="20"
+        />
+      </div>
+      <div>
+        <label for="Email">Email</label>
+        <input type="email" name="Email" id="Email" value="o@o.com" readonly />
+      </div>
+      <input type="reset" name="Empty" />
+      <input type="submit" value="Send" />
+      <div>
+        <label>skills</label>
+        <div>
+            <input type="checkbox" name="skills" id="list_1" value="Problem Solving" checked>
+            <label for="list_1">Problem Solving</label>
+        </div>
+        <div>
+            <input type="checkbox" name="skills" id="list_2" value="Logical Thinking" checked>
+            <label for="list_2">Logical Thinking</label>
+        </div>
+        <div>
+            <input type="checkbox" name="skills" id="list_3" value="Advanced Search">
+            <label for="list_3">Advanced Search</label>
+        </div>
+        <div>
+            <input type="checkbox" name="skills" id="list_4" value="Analysis">
+            <label for="list_4">Analysis</label>
+        </div>
+        <div>
+            <input type="checkbox" name="skills" id="list_5" value="Planning">
+            <label for="list_5">Planning</label>
+        </div>
+      </div>
+      <div>
+        <label>job</label>
+        <div>
+            <input type="radio" name="job" id="list__1" value="Front-End Developer" checked>
+            <label for="list__1">Front-End Developer</label>
+        </div>
+        <div>
+            <input type="radio" name="job" id="list__2" value="Back-End Developer">
+            <label for="list__2">Back-End Developer</label>
+        </div>
+        <div>
+            <input type="radio" name="job" id="list__3" value="Business Analyst">
+            <label for="list__3">Business Analyst</label>
+        </div>
+        <div>
+            <input type="radio" name="job" id="list__4" value="Project Manager">
+            <label for="list__4">Project Manager</label>
+        </div>
+        <div>
+            <input type="radio" name="job" id="list__5" value="Scrum Master">
+            <label for="list__5">Scrum Master</label>
+        </div>
+      </div>
+      <div>
+        <label for="prog_lang">Choose Language: </label>
+        <select name="choises" id="prog_lang">
+            <optgroup label="PHP">
+                <option value="PHP">v5.0</option>
+                <option value="PHP">v7.0</option>
+                <option value="PHP">v8.0</option>
+            </optgroup>
+            <optgroup label="Python">
+                <option value="Python">v2.0</option>
+                <option value="Python">v3.0</option>
+                <option value="Python">v3.9</option>
+            </optgroup>
+        </select>
+        <br>
+        <textarea name="brief" cols="30" rows="10" placeholder="Write Here Why You Want To Learn Programming"></textarea>
+      </div>
+    </form>
+  </body>
+</html>

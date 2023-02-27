@@ -1,0 +1,48 @@
+body * {
+  border-radius: 5px !important;
+}
+.create,
+.out {
+  margin: 20px auto;
+  background-color: #ddd;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  min-width: fit-content;
+}
+input {
+  padding: 0 10px;
+}
+.add-npt {
+  flex: 1;
+  margin-right: 20px;
+  border-radius: var(--radius);
+  border: 1px solid black;
+  background-color: white;
+  outline: none;
+}
+.add-btn,
+.del {
+  height: 40px;
+  background-color: red;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.out {
+  display: block;
+}
+.item {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.del {
+  height: auto;
+}
+.item:not(:last-of-type) {
+  margin-bottom: 15px;
+}

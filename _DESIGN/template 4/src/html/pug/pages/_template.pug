@@ -1,0 +1,20 @@
+include ../helpers/_mixins
+include ../layout/_sidebar.pug
+
+doctype html
+html(lang="en")
+  head
+    block page-name
+    title #{name}
+    include ../layout/meta
+    include ../layout/fonts
+    include ../layout/style-dev
+  body
+    +sidebar(name)
+    include ../layout/_header
+
+    div(class=name)
+      +section-header(name)
+      block page-content
+
+    include ../layout/script-dev

@@ -1,0 +1,28 @@
+:root {
+    --width: 785px;
+    --height: 475px;
+    --border: 15px;
+}
+div {
+    width: var(--width);
+    height: var(--height);
+    background: linear-gradient(to right, white 50%, #343A40 50%);
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+div::before {
+    content: '';
+    background: linear-gradient(to left, white 50%, #343A40 50%);
+    width: calc(var(--width) - 2 * var(--border));
+    height: calc(var(--height) - 2 * var(--border));
+    margin: var(--border);
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index:-1;
+}
+img {
+    transform: translateY(10%);
+}

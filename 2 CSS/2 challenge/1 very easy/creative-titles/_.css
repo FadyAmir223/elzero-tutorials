@@ -1,0 +1,93 @@
+* {
+    padding-left: 5px;
+}
+h3 {
+    position: relative;
+    padding-bottom: 30px;
+}
+h3::after {
+    content: "";
+    width: 240px; height: 1px;
+    position: absolute;
+    bottom: 0; left: 0;
+}
+h3::before {
+    content: "";
+    width: 12px; height: 12px;
+    position: absolute;
+    bottom: -5px; left: -5px;
+}
+div > h1 {
+    color: #000000;
+}
+div > h3:first-of-type {
+    color: #2C81D8;
+}
+div > h3:nth-of-type(2) {
+    color: #CF2C2C;
+}
+div > h3:nth-of-type(3) {
+    color: #309E0E;
+}
+div > h3:last-of-type {
+    color: #CD661A;
+}
+h3:first-of-type::after {
+    background: linear-gradient(to right, #2C81D8 50%, #CECECE 50%);
+}
+h3:nth-of-type(2)::after {
+    background: linear-gradient(to right, #CF2C2C 50%, #CECECE 50%);
+}
+h3:nth-of-type(3)::after {
+    background: linear-gradient(to right, #309E0E 50%, #CECECE 50%);
+}
+h3:last-of-type::after {
+    background: linear-gradient(to right, #CD661A 50%, #CECECE 50%);
+}
+h3:first-of-type::before {
+    background-color: #2C81D8;
+}
+h3:nth-of-type(2)::before {
+    background-color: #CF2C2C;
+}
+h3:nth-of-type(3)::before {
+    background-color: #309E0E;
+}
+h3:last-of-type::before {
+    background-color: #CD661A;
+}
+.circle h3::before {
+    border-radius: 50%;
+}
+.triangle-up h3::before,
+.triangle-down h3::before {
+    width: 0; height: 0;
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 6px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+.triangle-up h3::before {
+    bottom: 1px; left: 0;
+}
+.triangle-down h3::before {
+    transform: rotate(180deg);
+    bottom: -6px; left: 0;
+}
+.triangle-up h3:first-of-type::before,
+.triangle-down h3:first-of-type::before {
+    border-bottom-color: rgb(31, 100, 170);
+}
+.triangle-up h3:nth-of-type(2)::before,
+.triangle-down h3:nth-of-type(2)::before {
+    border-bottom-color: rgb(166, 35, 35);
+}
+.triangle-up h3:nth-of-type(3)::before,
+.triangle-down h3:nth-of-type(3)::before {
+    border-bottom-color: rgb(38, 126, 11);
+}
+.triangle-up h3:last-of-type::before,
+.triangle-down h3:last-of-type::before {
+    border-bottom-color: #CD661A;
+}

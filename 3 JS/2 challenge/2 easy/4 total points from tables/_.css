@@ -1,0 +1,19 @@
+body {
+  background-color: #EEEEEE;
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  width: fit-content;
+  min-width: 300px;
+  border-spacing: 2px;
+}
+caption {
+  margin: 25px 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+td {
+  padding: 5px;
+  background-color: #FAFAFA;
+}

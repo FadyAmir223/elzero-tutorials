@@ -1,0 +1,58 @@
+:root {
+    --border-size: 5px;
+}
+
+div {
+    width: 50px;
+    height: 50px;
+    border-color: #FC2455;
+    border-top-color: transparent;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin: auto;
+    top: 0; bottom: 0; right: 0; left: 0;
+}
+
+div,
+div::before,
+div::after {
+    position: absolute;
+    border-radius: 50%;
+    border-width: var(--border-size);
+    border-style: solid;
+}
+
+div::before,
+div::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div::before {
+    border-color: #2490FF;
+    border-bottom-color: transparent;
+    width: calc(100% + var(--border-size) * 2);
+    height: calc(100% + var(--border-size) * 2);
+}
+
+div::after {
+    border-color: #FC9000;
+    border-left-color: transparent;
+    width: calc(100% + var(--border-size) * 4);
+    height: calc(100% + var(--border-size) * 4);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+div:hover {
+    animation-play-state: paused;
+}

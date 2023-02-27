@@ -1,0 +1,19 @@
+div {
+    background-color: #EEEEEE;
+    font-size: 16px;
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+}
+
+._2 {
+    overflow-y: hidden;
+    height: 11px;
+    word-break: break-word;
+}
+
+._3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,37 @@
+.dotted-circle,
+.dotted-circle::before {
+    width: var(--radius);
+    height: var(--radius);
+    border-width: 4px;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    position: absolute;
+}
+.dotted-circle {
+    --radius: 100px;
+    border-color: #0075ff;
+    margin-top: calc(var(--radius) / -2);
+    margin-left: calc(var(--radius) / -2);
+    top: 50%;
+    left: 50%;    
+    animation: rotate-right 2s linear infinite;
+}
+.dotted-circle::before {
+    content: '';
+    --radius: 50px;
+    border-color: #009688;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: rotate-left 1s linear infinite;
+}
+@keyframes rotate-right {
+    from { transform: rotate(0turn); }
+    to { transform: rotate(1turn); }
+}
+@keyframes rotate-left {
+    from { transform: rotate(1turn); }
+    to { transform: rotate(0turn); }
+}

@@ -1,0 +1,208 @@
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+.btn-shape {
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: $radius;
+  color: white;
+}
+
+.btn-blue {
+  @extend .btn-shape;
+  background-color: $blue;
+  transition: $t-time;
+
+  &:hover {
+    background-color: $blue-alt;
+  }
+}
+
+.btn-grey {
+  background-color: #eee;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: $radius;
+}
+
+%content-container {
+  border-radius: $radius;
+  overflow: hidden;
+  background-color: white;
+  padding: 20px;
+}
+
+%page-setup {
+  margin-left: $sidebar-lg;
+  padding: 20px;
+  min-height: calc(100vh - 69px);
+
+  @media (max-width: 767px) {
+    margin-left: $sidebar-sm;
+  }
+}
+
+%grey-btn {
+  background-color: #eee;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.color-grey {
+  color: $grey;
+}
+
+// titles
+.single-title {
+  margin-bottom: 20px;
+}
+
+.combo-title {
+  .title {
+    margin: 0;
+    font: {
+      size: 24px;
+      weight: bold;
+    };
+  }
+
+  p {
+    font-size: 15px;
+    margin: 10px 0 20px;
+  }
+}
+
+// checkbox
+.checkbox-container {
+  &:hover label::before {
+    border: 2px solid $blue;
+  }
+  
+  input[type="checkbox"] {
+    appearance: none;
+    
+    &:checked + label::after {
+      background-color: $blue;
+      transform: scale(1);
+    }
+  }
+  
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    
+    &::before,
+    &::after {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 8px);
+      transition: $t-time;
+    }
+
+    &::before {
+      content: '';
+      border: 2px solid $grey;
+    }
+
+    &::after {
+      font-family: "Font Awesome 6 Pro";
+      content: "\f00c";
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      transform: scale(0) rotate(1turn);
+    }
+  }
+}
+
+// radio
+.radio-container {
+  input[type="radio"] {
+    appearance: none;
+
+    &:checked + label::before {
+      border: 2px solid $blue;
+    }
+
+    &:checked + label::after {
+      background-color: $blue;
+      transform: scale(1);
+    }
+  }
+
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      transition: $t-time;
+    }
+    
+    &::before {
+      width: 22px;
+      height: 22px;
+      left: 0;
+      border: 2px solid $grey;
+    }
+
+    &::after {
+      width: 12px;
+      height: 12px;
+      left: 5px;
+      top: 5px;
+      background-color: $grey;
+      transform: scale(0);
+    }
+  }
+}
+
+//
+.section-header {
+  margin: 0 0 40px 0;
+  font-weight: bold;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+  }
+
+  &::before {
+    width: 120px;
+    background-color: white;
+  }
+  
+  &::after {
+    width: 40px;
+    background-color: black;
+  }
+}
+
+li.skill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  span {
+    @extend .btn-grey;
+    padding: 4px 10px;
+  }
+}

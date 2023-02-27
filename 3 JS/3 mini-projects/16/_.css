@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn {
+  background-color: brown;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 20px auto;
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+}
+.data {
+  background-color: #D0D0D0;
+  padding: 15px;
+}
+.user {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.user:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.name {
+  flex: 1;
+}
+.city,
+.phone {
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+}
+.city {
+  background-color: #007A7F;
+  margin-right: 10px;
+}
+.phone {
+  background-color: #F6053A;
+}

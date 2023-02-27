@@ -1,0 +1,27 @@
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-right: 2px solid red;
+    width: 186px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: letters 2s steps(17), blink 0.5s infinite;
+}
+@keyframes letters {
+    from {
+        width: 0;
+    }
+    to {
+        width: 183px;
+    }
+}
+@keyframes blink {
+    from {
+        border-right-color: red;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}

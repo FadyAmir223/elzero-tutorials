@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+:root {
+    --sign-color: #F2374C;
+}
+.page {
+    background-color: black;
+    width: 1200px;
+    height: 600px;
+    padding-top: 70px;
+    padding-right: 80px;
+    padding-bottom: 90px;
+    padding-left: 90px;
+    display: grid;
+    gap: 100px;
+    grid-template-columns: repeat(2, auto);
+}
+.border {
+    width: 420px;
+    height: 340px;
+    border: 10px solid #F2374C80;
+    position: relative;
+    left: 10%;
+    top: 15%;
+}
+.border img {
+    position: relative;
+    left: -15%;
+    top: 12%;
+}
+.title {
+    text-transform: capitalize;
+    font-size: 45px;
+}
+a {
+    text-decoration: none;
+    color: var(--sign-color);
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-bottom: 30px;
+}
+a::before {
+    content: "";
+    background-color: var(--sign-color);
+    width: 40px;
+    height: 2px;
+    position: absolute;
+    left: 6px;
+    top: 30px;
+}
+a::after {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--sign-color);
+    position: absolute;
+    left: 0;
+    top: 23px;
+}
+.text {
+    font-size: small;
+    line-height: 1.7;
+}
+.icons {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, auto);
+    text-align: center;
+}
+.icons > * > img {
+    width: 100px;
+    height: auto;
+}
+.icons > * {
+    border: 2px solid #F2374C50;
+    position: relative;
+}
+.icons > *::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 10px solid var(--sign-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+img + .text {
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+

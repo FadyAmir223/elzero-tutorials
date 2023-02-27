@@ -1,0 +1,47 @@
+:root {
+    --_1: 20px;
+    --_2: 40px;
+    --up_down: 20px;
+}
+
+div {
+    color: black;
+    background-color: #F2F2F4;
+    margin: 20px;
+    text-align: center;
+}
+
+.parent {
+    width: 300px;
+    height: 160px;
+    position: relative;
+}
+
+._1, ._2 {
+    --line: 50px;
+    background-color: #DEDEDC;
+    width: 250px;
+    height: var(--line);
+    margin: auto;
+    line-height: var(--line);
+}
+
+._1 {
+    position: relative;
+    top: var(--_1);
+}
+
+._2 {
+    position: relative;
+    top: var(--_2);
+}
+
+._1:hover {
+    transition-duration: 0.5s;
+    top: calc(var(--_1) - var(--up_down));
+}
+
+._2:hover {
+    transition-delay: 0.5s;
+    top: calc(var(--_2) + var(--up_down));
+}

@@ -1,0 +1,47 @@
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #f8f8f8;
+    font-size: 40px;
+}
+.choice {
+    margin-bottom: 10px;
+}
+label {
+    position: relative;
+    padding-left: 30px;
+}
+input[type='radio'] {
+    display: none;
+}
+label::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #0075ff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+input[type='radio']:checked + label::after,
+input[type='radio']:hover + label::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #0075ff;
+    transition: 0.3s;
+}
+input[type='radio']:hover + label::after {
+    opacity: 0.3;
+}
+input[type='radio']:checked + label {
+    color: #0075ff;
+}

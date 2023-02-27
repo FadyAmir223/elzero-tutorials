@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+.page {
+    width: inherit;
+    height: inherit;
+    padding: 50px;
+    margin: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main {
+    width: inherit;
+    text-align: center;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    position: relative;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px;
+    
+}
+.main > img {
+    filter: opacity(0.6) drop-shadow(0 0 0 #202835);
+    background-color: #202835;
+    width: 520px;
+    height: 520px;
+    text-align: center;
+    z-index: 0;
+    position: absolute;
+}
+img {
+    width: 150px;
+    height: auto;
+    z-index: 1;
+    border: 10px solid white;
+    border-radius: 50%;
+}
+.top-left img {
+    background-color: #FF7058;
+}
+.top-right img {
+    background-color: #7FDBFC;
+}
+.bottom-left img {
+    background-color: #B1975C;
+}
+.bottom-right img {
+    background-color: #4CD4C0;
+}
+.top-left {
+    position: absolute;
+    top: 0; left: 0;
+}
+.top-right {
+    position: absolute;
+    top: 0; right: 0;
+}
+.bottom-left {
+    position: absolute;
+    bottom: 0; left: 0;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 0; right: 0;
+}
+
+.basic-text {
+    width: 520px;
+    text-align: center;
+}
+.basic-text .title {
+    font-size: 28px;
+    font-weight: bold;
+}
+.title {
+    color: black;
+    padding-bottom: 1em;
+}
+.text {
+    font-size: 12px;
+    color: #00000090;
+}
+.textarea {
+    width: 200px;
+    position: absolute;
+    line-height: 1.4;
+}
+
+.top-right.textarea {
+    top: 0; right: -140%;
+    text-align: left;
+}
+.top-left.textarea {
+    top: 0; left: -140%;
+    text-align: right;
+}
+.bottom-left.textarea {
+    bottom: 0; left: -140%;
+    text-align: right;
+}
+.bottom-right.textarea {
+    bottom: 0; right: -140%;
+    text-align: left;
+}
+.main-text {
+    z-index: 1;
+}
+.main-text .title {
+    font-size: 21px;
+}
+.main-text .text {
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+/* uncomplete & wrong */
+
+div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transform-style: preserve-3d;
+}
+
+div,
+div::before,
+div::after {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+div::before {
+    content: "Front";
+    background-color: #FA3664;
+    backface-visibility: hidden;
+}
+
+div::after {
+    content: "Back";
+    background-color: #1692FC;
+    backface-visibility: hidden;
+}
+
+div:hover::after {
+    transition-duration: 1s;
+    transform: rotateX(-180deg);
+    transform-origin: left left;
+}

@@ -1,0 +1,27 @@
+extends _template
+
+block page-name
+  - let name = "files"
+
+block page-content
+  .files-contnet
+    .file-list
+      +file("pdf.svg", "my-file.pdf", "fezza", "20/06/2020", "5.5MB")
+      +file("avi.svg", "my-file.avi", "admin", "16/05/2021", "12.5MB")
+      +file("eps.svg", "my-file.eps", "uploader", "16/05/2021", "MB")
+      +file("psd.svg", "my-file.psd", "osama", "16/05/2021", "15.1MB")
+      +file("dll.svg", "my-file.dll", "coder", "16/05/2021", "2.2MB")
+      +file("png.svg", "my-file.png", "designer", "16/05/2021", "1.1MB")
+      +file("dll.svg", "my-file.dll", "coder", "16/05/2021", "2.2MB")
+      +file("psd.svg", "my-file.psd", "osama", "16/05/2021", "15.1MB")
+      +file("png.svg", "my-file.png", "designer", "16/05/2021", "1.1MB")
+      +file("pdf.svg", "my-file.pdf", "fezza", "20/06/2020", "5.5MB")
+      +file("avi.svg", "my-file.avi", "admin", "16/05/2021", "12.5MB")
+    .stat
+      h2.title.h4.fw-bold.text-capitalize.mb-3 file statistics
+      .stat-list
+        +file-type("PDF files", "130", "6.5GB", "fa-regular fa-file-pdf fa-lg")
+        +file-type("images", "115", "3.5GB", "fa-regular fa-images fa-lg")
+        +file-type("word files", "110", "3.2GB", "fa-regular fa-file-word fa-lg")
+        +file-type("CSV files", "99", "2.9GB", "fa-solid fa-file-csv fa-lg")
+      a.upload.btn-blue.text-capitalize(href="#") #[i.fa-solid.fa-angles-up] upload

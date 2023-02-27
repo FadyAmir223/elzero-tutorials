@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script>
+      // Code One - won't work bcs "el" doesn't exist yet
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script>
+      // Code Two - works bcs it executes when page loads
+      window.onload = function () {
+        document.getElementById("el").style.color = "red";
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="el">Page Title</h1>
+    <script>
+      // Code Three - works bcs page exists up
+      document.getElementById("el").style.color = "red";
+    </script>
+  </body>
+</html>

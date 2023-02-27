@@ -1,0 +1,157 @@
+@import '_imports';
+
+.files {
+  @extend %page-setup;
+
+  .files-contnet {
+    display: flex;
+    gap: 20px;
+
+    @media #{$mobile} {
+      flex-direction: column;
+    }
+    
+    .file-list {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      flex: 1;
+  
+      .file {
+        @extend %content-container;
+        padding: 10px;
+        color: $grey;
+        font-size: 13px;
+        position: relative;
+
+        &:hover img {
+          transform: rotate(5deg);
+        }
+        
+        svg {
+          position: absolute;
+          left: 8px;
+          top: 8px;
+        }
+
+        .file-img {
+          margin-bottom: 13px;
+
+          img {
+            width: 64px;
+            height: 64px;
+            margin: 15px 0;
+            transition: $t-time;
+          }
+        }
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+          padding-top: 10px;
+          border-top: 1px solid $grey;
+        }
+      }
+    }
+    
+    .stat {
+      @extend %content-container;
+      min-width: 260px;
+      height: fit-content;
+
+      @media #{$mobile} {
+        width: 100%;
+        order: -1;
+      }
+
+      .stat-list {
+        $colors: $blue, $green, $red, $orange;
+        $idx: 0;
+
+        @each $color in $colors {
+          $idx: $idx + 1;
+
+          :nth-child(#{$idx}) .icon {
+            background-color: rgba($color, 0.2);
+            
+            svg {
+              color: $color;
+            }
+          }  
+        }
+
+        .file-type {
+          border: 1px solid $grey;
+          border-radius: $radius;
+          padding: 15px;
+          font-size: 13px;
+          color: $grey;
+          display: flex;
+          align-items: center;
+          
+          &:not(:last-of-type) {
+            margin-bottom: 15px;
+          }
+
+          .icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+          }
+
+          .txt {
+            span {
+              display: block;
+
+              &.type {
+                color: black;
+              }
+            }
+          }
+
+          .size {
+            flex: 1;
+            text-align: end;
+          }
+        }
+      }
+
+      a {
+        padding: 10px 15px;
+        background-color: $blue;
+        margin: 0;
+        font-size: 13px;
+        transition: $t-time;
+        margin: 15px auto 0;
+        display: block;
+        width: fit-content;
+
+        &:hover {
+          background-color: $blue-alt;
+
+          svg {
+            animation: go-up 0.8s infinite;
+          }
+        }
+
+        svg {
+          margin-right: 10px;
+        }
+
+        @keyframes go-up {
+          0%, 100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+}

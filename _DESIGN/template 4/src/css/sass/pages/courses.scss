@@ -1,0 +1,63 @@
+@import '_imports';
+
+.courses {
+  @extend %page-setup;
+  .course-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .course {
+      @extend %content-container;
+      position: relative;
+
+      .cover {
+        text-align: center;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .instructor {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid white;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+
+      .content {
+        .txt {
+          padding: $padding;
+          border-bottom: 1px solid $grey;
+
+          p {
+            font-size: 14px;
+            color: $grey;
+          }
+        }
+
+        .info {
+          padding: $padding;
+          color: $grey;
+          font-size: 13px;
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+
+          a {
+            font-size: 13px;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}

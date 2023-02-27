@@ -1,0 +1,22 @@
+div {
+    background-color: #D4D4D4;
+    width: fit-content;
+    height: 50px;
+    padding: 20px;
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+div::first-letter {
+    background-color: red;
+    margin-right: 20px;
+    margin-left: -38px;
+    padding: 10px;
+    position: relative;
+    left: -30px;
+}

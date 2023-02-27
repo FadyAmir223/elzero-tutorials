@@ -1,0 +1,30 @@
+form {
+  width: fit-content;
+  margin: 50px auto 0;
+  position: relative;
+}
+input {
+  width: 300px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #666;
+  padding: 10px;
+}
+span {
+  position: absolute;
+  right: 10px;
+  top: calc(100% + 10px);
+  font-size: 20px;
+}
+.zero {
+  color: red;
+  font-weight: bold;
+}
+div {
+  width: 0%;
+  height: 2px;
+  background-color: dodgerblue;
+  top: -2px;
+  position: relative;
+  transition: 0.5s;
+}

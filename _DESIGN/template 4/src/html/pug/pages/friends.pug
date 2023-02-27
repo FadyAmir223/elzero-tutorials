@@ -1,0 +1,17 @@
+extends _template
+
+block page-name
+  - let name = "friends"
+
+block page-content
+  .friend-list
+    +friend("friend-01.jpg", "ahmed nasser", "JavaScript Developer", "99", "15", "25", "02/10/2021", " ")
+    +friend("friend-02.jpg", "omar fathy", "cloud developer", "30", "11", "12", "02/08/2020")
+    +friend("friend-03.jpg", "omar ahmed", "mobile developer", "80", "20", "18", "02/06/2020")
+    +friend("friend-04.jpg", "shady nabil", "back-end developer", "70", "30", "18", "28/06/2020")
+    +friend("friend-05.jpg", "mohamed ibrahim", "algorithm developer", "80", "30", "18", "28/08/2020")
+    +friend("friend-04.jpg", "amr hendawy", "back-end developer", "70", "30", "18", "28/06/2020")
+    +friend("friend-02.jpg", "mahmoud adel", "cloud developer", "30", "11", "12", "02/08/2020")
+    +friend("friend-05.jpg", "ahmed abuzaid", "content creator", "80", "30", "18", "28/08/2020", " ")
+    +friend("friend-01.jpg", "gareeb elshiekh", "JavaScript developer", "90", "15", "25", "02/10/2020", " ")
+    +friend("friend-03.jpg", "hamza", "front-end-developer", "80", "20", "18", "02/06/2020")

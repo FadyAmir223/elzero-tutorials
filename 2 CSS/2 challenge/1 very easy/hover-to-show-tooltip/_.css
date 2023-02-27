@@ -1,0 +1,43 @@
+span {
+    background-color: #FE0204;
+    display: inline-block;
+    color: white;
+    padding: 15px;
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+span::before {
+    content: "this is tooltip content";
+    background-color: black;
+    width: max-content;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    top: -150%;
+    left: -30%;
+    padding: 15px;
+    font-size: 30px;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+span::after {
+    content: "";
+    border: 15px solid black;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    top: -75%;
+    left: 40%;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+span:hover::before,
+span:hover::after {
+    opacity: 1;
+}

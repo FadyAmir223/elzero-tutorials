@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+html {
+    background-color: black !important;
+}
+.page {
+    background-color: #333333;
+    display: grid;
+    grid-template-rows: 1fr 70px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.page > * {
+    padding-left: 275px;
+    padding-right: 275px;
+}
+
+footer {
+    background-color: #2B2B2B;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+footer span {
+    color: #00000080;
+}
+.imgs {
+    display: flex;
+}
+.imgs > * {
+    height: 24px;
+    width: auto;
+}
+img + img {
+    margin-left: 10px;
+}
+img {
+    border-radius: 2px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 80px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    color: #00000080;
+}
+header > * > .title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.col-1 > .text {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.col-1 .row {
+    display: flex;
+    line-height: 1.6;
+}
+.col-1 .row .title {
+    text-transform: uppercase;
+}
+.col-1 .row:last-of-type {
+    margin-top: 20px;
+}
+.col-1 .row > * {
+    width: 50%;
+}
+.col-1 .data {
+    color: white;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 2.2;
+    margin-top: -5px;
+}
+
+.col-4 .text {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+input[type="email"] {
+    border: none;
+    background-color: #4C4C4C;
+    padding: 10px;
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+button {
+    border: none;
+    background-color: #E52727;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+}
+:focus-visible {
+    outline: none;
+}
+.col-4 .row-2 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.icons > * {
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+}
+i + i {
+    margin-left: 5px;
+}
+.icons i[class*='facebook'] {
+    background-color: #3C5A99;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.icons i[class*='twitter'] {
+    background-color: #00A2E8;
+}
+.icons i[class*='youtube'] {
+    background-color: #E52E2E;
+}
+.icons i[class*='instagram'] {
+    background-color: #815DC7;
+}
+.icons i[class*='wifi'] {
+    background-color: #FFC338;
+    color: #333333;
+    transform: rotate(45deg);
+}

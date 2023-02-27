@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>My First Page</title>
+    <meta
+      name="title"
+      charset="UTF-8"
+      content="This Is Description For My First Page"
+    />
+  </head>
+  <body>
+    <!-- قم بإلتقاط صورة من ال Query String التي تحتوي على البيانات -->
+    <form  method="get">
+      <div>
+        <label for="1">Username</label>
+        <br>
+        <input id="1" type="text" required title="some advice"/>
+        <hr>
+      </div>
+      <div>
+        <label for="2">Password</label>
+        <br>
+        <input id="2" type="password" title="some advice"/>
+        <hr>
+      </div>
+      <div>
+          <!-- fucked up pattern -->
+          <label for="3">Mobile</label>
+          <br>
+          <input
+          id="3"
+          type="tel"
+          pattern="+[20]{0-4}[\d]{10-16}[(?\d)?]?{5}[\d]?{0-10}"
+          title="must be like +20100 (234) 123"
+          />
+        <hr>
+      </div>
+      <div>
+        <label for="4">Email</label>
+        <br>
+        <input id="4" type="email" required title="some advice"/>
+        <hr>
+      </div>
+      <div>
+        <label for="5">Subject</label>
+        <br>
+        <input id="5" type="text" title="some advice"/>
+      </div>
+      <input type="hidden" value="0">
+      <input type="reset" value="Empty Form">
+      <input type="submit" value="Send Data">
+      </form>
+  </body>
+</html>

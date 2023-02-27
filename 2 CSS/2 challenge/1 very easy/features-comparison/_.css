@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+.save {
+    background-color: #2196F3;
+    color: white;
+    font-size: large;
+    width: fit-content;
+    margin: 20px;
+    padding: 15px;
+    position: relative;
+    left: 88%;
+}
+.save::before,
+.save::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    border: 18px solid rgb(10, 106, 182);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+.save::before {
+    transform: translate(50%, 48%) rotate(45deg);
+    border-right-color: transparent;
+}
+.save::after {
+    transform: translate(50%, -92%) rotate(45deg);
+    border-top-color: transparent;
+}
+
+.table {
+    display: grid;
+    grid-template: repeat(14, auto) / repeat(2, auto);
+    gap: 15px;
+}
+.title {
+    color: white;
+    font-size: large;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.basic .title{
+    background-color: #F44336;    
+}
+.prof .title {
+    background-color: #2196F3;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    margin-bottom: 1px;
+    background-color: black;
+    position: relative;
+}
+li::before {
+    display: inline-block;
+    border-radius: 50%;
+    padding: 0px 5px 1px 5px;
+    margin-right: 10px;
+}
+.basic li:nth-child(n+4):nth-child(-n+10)::before,
+.basic li:nth-last-child(2)::before {
+    content: '✖';
+    background-color: #E91E63;
+}
+li:not(.basic li:nth-child(n+4):nth-child(-n+10), .basic li:nth-last-child(2))::before {
+    content: '✓';
+    background-color: #009688;
+}
+.prof li:nth-last-child(2)::after {
+    content: "?";
+    background-color: #7E7E7E;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 1px 7px 1px 7px;
+    font-size: larger;
+    position: absolute;
+    right: 2%;
+}
